@@ -1,0 +1,288 @@
+{% comment %} Plantilla personalizada: Face Age Test {% endcomment %}
+
+{{ 'section-page.css' | asset_url | stylesheet_tag }}
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  /* ── Variables ── */
+  :root {
+    --fa-orange:  #F15A24;
+    --fa-pink:    #E3B1D2;
+    --fa-pink-lt: #f5dff0;
+    --fa-radius:  12px;
+    --fa-font:    'Poppins', sans-serif;
+  }
+
+  /* ── Fuente global del modal ── */
+  .fa-overlay,
+  .fa-overlay * {
+    font-family: var(--fa-font);
+    box-sizing: border-box;
+  }
+
+  /* ── Overlay ── */
+  .fa-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* ── Modal box ── */
+  .fa-modal {
+    background: #fff;
+    border-radius: 20px;
+    padding: 2rem 2rem 0;
+    max-width: 480px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+
+  /* ── Cabecera ── */
+  .fa-modal__header {
+    margin-bottom: 1rem;
+    padding: 0 3rem;
+  }
+
+  .fa-modal__title {
+    color: var(--fa-orange);
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin: 0 0 0.5rem;
+    line-height: 1.2;
+  }
+
+  .fa-modal__subtitle {
+    color: var(--fa-orange);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    font-weight:300;
+    margin: 0;
+  }
+
+  /* ── Cuerpo (checkboxes) ── */
+  .fa-modal__body {
+    padding: 0 3rem 2rem;
+  }
+
+  /* ── Secciones de consentimiento ── */
+  .fa-section__label {
+    color: var(--fa-orange);
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0 0 0.5rem;
+  }
+
+
+  .fa-checkbox-row {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    border: 1.5px solid var(--fa-pink);
+    border-radius: var(--fa-radius);
+    padding: 0.875rem;
+    padding-bottom:2rem;
+    cursor: pointer;
+    margin: 0;
+    background: #fff;
+    transition: background 0.15s;
+  }
+
+
+.fa-checkbox-row input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+
+  margin-top: 2px;
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  cursor: pointer;
+  flex-shrink: 0;
+
+  border: 2px solid var(--fa-pink);
+  background-color: var(--fa-pink);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: all 0.2s ease;
+}
+
+/* Estado checked */
+.fa-checkbox-row input[type="checkbox"]:checked {
+  background-color: var(--fa-orange);
+  border-color: var(--fa-orange);
+}
+
+/* Check blanco */
+.fa-checkbox-row input[type="checkbox"]:checked::after {
+  content: "✓";
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 1;
+}
+
+  .fa-checkbox-row span {
+    font-size: 1rem;
+    color: var(--fa-orange);
+    line-height: 1.5;
+  }
+
+  .fa-checkbox-row a {
+    color: var(--fa-orange);
+    text-decoration: underline;
+  }
+
+  /* ── Pie del modal ── */
+  .fa-modal__footer {
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+    background: var(--fa-pink);
+    margin: 0 -2rem;
+    padding: 1.25rem 2rem;
+    border-radius: 0 0 20px 20px;
+  }
+
+  /* ── Botones ── */
+  .fa-btn {
+    padding: 12px 32px;
+    border-radius: 10px;
+    font-family: var(--fa-font);
+    font-size: 1.15rem;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: opacity 0.2s, background 0.2s;
+  }
+
+  .fa-btn--secondary {
+    background: #fff;
+    color: var(--fa-orange);
+  }
+
+  .fa-btn--secondary:hover {
+    background: #f5f5f5;
+  }
+
+  .fa-btn--primary {
+    background: var(--fa-orange);
+    color: #fff;
+    opacity: 0.35;
+  }
+
+  .fa-btn--primary:not(:disabled) {
+    opacity: 1;
+  }
+
+  .fa-btn--primary:hover:not(:disabled) {
+    background: #d94d1a;
+  }
+
+  /* ── Wrapper del test ── */
+  .fa-test-wrapper {
+    display: none;
+    padding: 2rem 0;
+  }
+</style>
+
+<div class="page-width">
+
+  <!-- Modal de consentimiento -->
+  <div id="terms-overlay" class="fa-overlay">
+    <div class="fa-modal">
+
+      <!-- Cabecera -->
+      <div class="fa-modal__header">
+        <h2 class="fa-modal__title">Antes de continuar</h2>
+        <p class="fa-modal__subtitle">
+          Para usar este test necesitamos tu consentimiento. Por favor, lee y acepta los siguientes términos.
+        </p>
+      </div>
+
+      <!-- Checkboxes -->
+      <div class="fa-modal__body">
+
+        <div class="fa-section">
+          <p class="fa-section__label">Términos y condiciones de uso</p>
+          <label class="fa-checkbox-row">
+            <input type="checkbox" id="cb-terms">
+            <span>
+              Acepto los <a href="/policies/terms-of-service" target="_blank">términos y condiciones</a>
+              del servicio FaceAge, incluyendo las condiciones de uso permitido y las restricciones aplicables.
+            </span>
+          </label>
+        </div>
+
+        <div class="fa-section">
+          <p class="fa-section__label">Tratamiento de datos personales</p>
+          <label class="fa-checkbox-row">
+            <input type="checkbox" id="cb-privacy">
+            <span>
+              Consiento el procesamiento de mi imagen facial para estimar la edad,
+              conforme a la <a href="/policies/privacy-policy" target="_blank">política de privacidad</a>.
+              Las imágenes no se almacenan permanentemente.
+            </span>
+          </label>
+        </div>
+
+      </div>
+
+      <!-- Botones -->
+      <div class="fa-modal__footer">
+        <button class="fa-btn fa-btn--secondary" onclick="rejectTerms()">Regresar</button>
+        <button class="fa-btn fa-btn--primary" id="accept-btn" onclick="acceptTerms()" disabled>Continuar</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Contenido del Face Age Test -->
+  <div id="face-age-wrapper" class="fa-test-wrapper">
+    <!-- Embed de la app aquí -->
+    {{ page.content }}
+  </div>
+
+</div>
+
+<script>
+  var SESSION_KEY = 'face_age_consent';
+
+  document.addEventListener('DOMContentLoaded', function () {
+    if (sessionStorage.getItem(SESSION_KEY) === 'true') {
+      showTest();
+    }
+  });
+
+  function checkBoxes() {
+    var ok = document.getElementById('cb-terms').checked &&
+             document.getElementById('cb-privacy').checked;
+    var btn = document.getElementById('accept-btn');
+    btn.disabled = !ok;
+  }
+
+  document.getElementById('cb-terms').addEventListener('change', checkBoxes);
+  document.getElementById('cb-privacy').addEventListener('change', checkBoxes);
+
+  function acceptTerms() {
+    sessionStorage.setItem(SESSION_KEY, 'true');
+    showTest();
+  }
+
+  function rejectTerms() {
+    history.back();
+  }
+
+  function showTest() {
+    document.getElementById('terms-overlay').style.display = 'none';
+    document.getElementById('face-age-wrapper').style.display = 'block';
+  }
+</script>

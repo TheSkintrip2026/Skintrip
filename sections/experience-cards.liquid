@@ -1,0 +1,236 @@
+{{ 'experience-cards.css' | asset_url | stylesheet_tag }}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+<div class="experience-cards" id="cardsSection">
+
+  {%- for block in section.blocks -%}
+    {%- assign is_featured = false -%}
+    {%- if block.settings.featured -%}
+      {%- assign is_featured = true -%}
+    {%- endif -%}
+
+    <div class="experience-card{% if is_featured %} experience-card--featured{% elsif forloop.first %} experience-card--slide-left{% else %} experience-card--slide-right{% endif %}"
+      {{ block.shopify_attributes }}>
+
+      <div class="experience-card__image-wrap">
+        {%- if block.settings.image != blank -%}
+          {{ block.settings.image | image_url: width: 600 | image_tag:
+            class: 'experience-card__image',
+            alt: block.settings.title,
+            loading: 'lazy'
+          }}
+        {%- else -%}
+          <img
+            src="{{ 'experience-' | append: forloop.index | append: '.png' | asset_url }}"
+            class="experience-card__image"
+            alt="{{ block.settings.title }}"
+            loading="lazy">
+        {%- endif -%}
+        <div class="experience-card__image-fade"> </div>
+        {%- if is_featured -%}
+          <div class="experience-card__badge">
+          <i class="fa-solid fa-heart"></i>
+           {{ 'custom.experience_cards.recommended_badge' | t }}</div>
+        {%- endif -%}
+      </div>
+
+      <div class="experience-card__body">
+        <h3 class="experience-card__title">{{ block.settings.title }}</h3>
+        <p class="experience-card__subtitle">{{ block.settings.subtitle }}</p>
+        <ul class="experience-card__features">
+          {%- for i in (1..10) -%}
+            {%- assign feature = 'feature_' | append: i -%}
+            {%- if block.settings[feature] != blank -%}
+              <li>{{ block.settings[feature] }}</li>
+            {%- endif -%}
+          {%- endfor -%}
+        </ul>
+        <a href="{{ block.settings.button_link | default: '/#quiz-gWHrq0'}}" class="experience-card__btn">
+          {{ block.settings.button_text }}
+        </a>
+      </div>
+
+    </div>
+  {%- endfor -%}
+
+</div>
+
+<script>
+(function () {
+  const section = document.getElementById('cardsSection');
+  if (!section) return;
+  const leftCard = section.querySelector('.experience-card--slide-left');
+  const rightCard = section.querySelector('.experience-card--slide-right');
+  if (!leftCard || !rightCard) return;
+
+  const observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        setTimeout(function () { leftCard.classList.add('visible'); }, 100);
+        setTimeout(function () { rightCard.classList.add('visible'); }, 250);
+        observer.disconnect();
+      }
+    });
+  }, { threshold: 0.2 });
+
+  observer.observe(section);
+})();
+</script>
+
+{% schema %}
+{
+  "name": "Experience Cards",
+  "blocks": [
+    {
+      "type": "card",
+      "name": "Card",
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "featured",
+          "label": "Featured (Recomendado)",
+          "default": false
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Self Care Guide"
+        },
+        {
+          "type": "text",
+          "id": "subtitle",
+          "label": "Subtitle",
+          "default": "Empieza por entender tu piel."
+        },
+        {
+          "type": "header",
+          "content": "Features (hasta 10)"
+        },
+        {
+          "type": "text",
+          "id": "feature_1",
+          "label": "Feature 1",
+          "default": "Reporte personalizado"
+        },
+        {
+          "type": "text",
+          "id": "feature_2",
+          "label": "Feature 2",
+          "default": "Recomendación de productos"
+        },
+        {
+          "type": "text",
+          "id": "feature_3",
+          "label": "Feature 3",
+          "default": "Guía de aplicación paso a paso"
+        },
+        {
+          "type": "text",
+          "id": "feature_4",
+          "label": "Feature 4"
+        },
+        {
+          "type": "text",
+          "id": "feature_5",
+          "label": "Feature 5"
+        },
+        {
+          "type": "text",
+          "id": "feature_6",
+          "label": "Feature 6"
+        },
+        {
+          "type": "text",
+          "id": "feature_7",
+          "label": "Feature 7"
+        },
+        {
+          "type": "text",
+          "id": "feature_8",
+          "label": "Feature 8"
+        },
+        {
+          "type": "text",
+          "id": "feature_9",
+          "label": "Feature 9"
+        },
+        {
+          "type": "text",
+          "id": "feature_10",
+          "label": "Feature 10"
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button text",
+          "default": "Empezar"
+        },
+        {
+          "type": "text",
+          "id": "button_link",
+          "label": "Button link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Experience Cards",
+      "blocks": [
+        {
+          "type": "card",
+          "settings": {
+            "title": "Self Care Guide",
+            "subtitle": "Empieza por entender tu piel.",
+            "feature_1": "Reporte personalizado",
+            "feature_2": "Recomendación de productos",
+            "feature_3": "Guía de aplicación paso a paso",
+            "button_text": "Empezar"
+          }
+        },
+        {
+          "type": "card",
+          "settings": {
+            "featured": true,
+            "title": "Wellness Box",
+            "subtitle": "Tu rutina llevada a casa.",
+            "feature_1": "Reporte personalizado",
+            "feature_2": "Recomendación de productos",
+            "feature_3": "Guía de aplicación paso a paso",
+            "feature_4": "Kit de muestras personalizado",
+            "feature_5": "Producto sorpresa + 1 regalo",
+            "feature_6": "Sesión grupal online",
+            "feature_7": "Acceso VIP descuentos",
+            "button_text": "Quiero mi box"
+          }
+        },
+        {
+          "type": "card",
+          "settings": {
+            "title": "Holistic Glow",
+            "subtitle": "La experiencia completa.",
+            "feature_1": "Reporte personalizado",
+            "feature_2": "Recomendación de productos",
+            "feature_3": "Guía de aplicación paso a paso",
+            "feature_4": "Kit de muestras personalizado",
+            "feature_5": "Producto sorpresa + 1 regalo",
+            "feature_6": "Sesión grupal online",
+            "feature_7": "Acceso VIP descuentos",
+            "feature_8": "Experiencia facial en casa (Madrid)",
+            "feature_9": "Seguimiento 1:1",
+            "feature_10": "Atención personalizada",
+            "button_text": "Vivir la experiencia"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

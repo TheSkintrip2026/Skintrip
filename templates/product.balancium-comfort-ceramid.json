@@ -1,0 +1,295 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "vendor": {
+          "type": "text",
+          "settings": {
+            "text": "{{ product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "paywhirl_paywhirl_plan_selector_tXJrCk": {
+          "type": "shopify://apps/paywhirl-subscriptions/blocks/paywhirl-plan-selector/41e95d60-82cf-46e8-84de-618d7e4c37b7",
+          "disabled": true,
+          "settings": {
+            "theme": "default",
+            "font_scale": 100,
+            "show_prices": "default",
+            "selling_plans_first": false,
+            "theme_color": "#334fb4",
+            "product": "{{product}}"
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {}
+        },
+        "share": {
+          "type": "share",
+          "settings": {
+            "share_label": "Share"
+          }
+        },
+        "icon_with_text_RrWTF4": {
+          "type": "icon-with-text",
+          "settings": {
+            "layout": "horizontal",
+            "icon_1": "heart",
+            "heading_1": "Vegan",
+            "icon_2": "truck",
+            "heading_2": "Envío seguro",
+            "icon_3": "return",
+            "heading_3": "Devoluciones gratis"
+          }
+        },
+        "rating_6zRTqz": {
+          "type": "rating",
+          "disabled": true,
+          "settings": {}
+        },
+        "collapsible_tab_RyCwng": {
+          "type": "collapsible_tab",
+          "disabled": true,
+          "settings": {
+            "heading": "BENEFICIOS",
+            "icon": "none",
+            "content": "<p>{{ product.metafields.custom.beneficios_aloe_soothing_sun_cream_spf50_pa_cosrx | metafield_tag }}</p>",
+            "page": ""
+          }
+        },
+        "collapsible_tab_cmG6b9": {
+          "type": "collapsible_tab",
+          "disabled": true,
+          "settings": {
+            "heading": "MODO DE USO",
+            "icon": "none",
+            "content": "",
+            "page": ""
+          }
+        },
+        "collapsible_tab_BGE4rn": {
+          "type": "collapsible_tab",
+          "disabled": true,
+          "settings": {
+            "heading": "INGREDIENTES",
+            "icon": "none",
+            "content": "<p>{{ product.metafields.custom.ingredientes_t_nico_facial_hidratante_de_qiyoi | metafield_tag }}</p>",
+            "page": ""
+          }
+        },
+        "collapsible_tab_rWXVdP": {
+          "type": "collapsible_tab",
+          "disabled": true,
+          "settings": {
+            "heading": "TIPO DE PIEL",
+            "icon": "none",
+            "content": "<p>{{ product.metafields.custom.tipodepiel_t_nico_facial_hidratante_de_qiyoi | metafield_tag }}</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "vendor",
+        "title",
+        "price",
+        "variant_picker",
+        "paywhirl_paywhirl_plan_selector_tXJrCk",
+        "quantity_selector",
+        "buy_buttons",
+        "description",
+        "share",
+        "icon_with_text_RrWTF4",
+        "rating_6zRTqz",
+        "collapsible_tab_RyCwng",
+        "collapsible_tab_cmG6b9",
+        "collapsible_tab_BGE4rn",
+        "collapsible_tab_rWXVdP"
+      ],
+      "custom_css": [],
+      "settings": {
+        "enable_sticky_info": true,
+        "color_scheme": "scheme-1",
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "gallery_layout": "thumbnail_slider",
+        "media_position": "left",
+        "image_zoom": "none",
+        "mobile_thumbnails": "hide",
+        "hide_variants": true,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 12
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "disabled": true,
+      "settings": {
+        "heading": "OTROS PRODUCTOS QUE TE PUEDEN INTERESAR 🧡",
+        "heading_size": "h2",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 28
+      }
+    },
+    "collapsible_content_z3UjHH": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_iYa3hM": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "BENEFICIOS",
+            "icon": "none",
+            "row_content": "<p>{{ product.metafields.custom.beneficios_balancium_comfort_ceramide_cream_cosrx | metafield_tag }}</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_CftPM6": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "MODO DE USO",
+            "icon": "none",
+            "row_content": "<p>{{ product.metafields.custom.mododeuso_balancium_comfort_ceramide_cream_cosrx | metafield_tag }}</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_F6D9K6": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "INGREDIENTES",
+            "icon": "none",
+            "row_content": "<p>{{ product.metafields.custom.ingredientes_balancium_comfort_ceramide_cream_cosrx | metafield_tag }}</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_DAJaTt": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "TIPO DE PIEL",
+            "icon": "none",
+            "row_content": "<p>{{ product.metafields.custom.tipodepiel_balancium_comfort_ceramide_cream_cosrx | metafield_tag }}</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_iYa3hM",
+        "collapsible_row_CftPM6",
+        "collapsible_row_F6D9K6",
+        "collapsible_row_DAJaTt"
+      ],
+      "custom_css": [
+        "h1 ¨ {font-size: 40px;}"
+      ],
+      "settings": {
+        "caption": "",
+        "heading": "",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "layout": "row",
+        "color_scheme": "",
+        "container_color_scheme": "",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "1716552376c85b78c2": {
+      "type": "apps",
+      "blocks": {
+        "air_product_reviews_app_block_review_list_3qV3YC": {
+          "type": "shopify://apps/ag-product-reviews/blocks/app-block-review-list/c4e1e9ca-4d46-4e76-bc39-7e42417cb327",
+          "settings": {
+            "air_blockreviews_summaryHeading": "¡No lo decimos nosotras, lo dicen nuestras primeras Skintriperas!",
+            "air_blockreviews_layout": "list",
+            "air_blockreviews_singleStarColor": "#f15a24",
+            "air_blockreviews_primaryColor": "#121212"
+          }
+        }
+      },
+      "block_order": [
+        "air_product_reviews_app_block_review_list_3qV3YC"
+      ],
+      "disabled": true,
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "171655274294c2a640": {
+      "type": "apps",
+      "blocks": {
+        "air_product_reviews_app_block_review_list_PnBcj8": {
+          "type": "shopify://apps/ag-product-reviews/blocks/app-block-review-list/c4e1e9ca-4d46-4e76-bc39-7e42417cb327",
+          "disabled": true,
+          "settings": {
+            "air_blockreviews_summaryHeading": "¡No lo decimos nosotras, lo dicen nuestras primeras Skintriperas!",
+            "air_blockreviews_layout": "list",
+            "air_blockreviews_singleStarColor": "#f15a24",
+            "air_blockreviews_primaryColor": "#121212"
+          }
+        }
+      },
+      "block_order": [
+        "air_product_reviews_app_block_review_list_PnBcj8"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "related-products",
+    "collapsible_content_z3UjHH",
+    "1716552376c85b78c2",
+    "171655274294c2a640"
+  ]
+}

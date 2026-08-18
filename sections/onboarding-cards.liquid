@@ -1,0 +1,383 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link
+  href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;1,400&display=swap"
+  rel="stylesheet"
+>
+  <>
+
+<style>
+  @font-face {
+    font-family: 'Magic Romance';
+    src: url('{{ "magic-romance.woff2" | asset_url }}') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  /* ── Animación compartida ── */
+   @keyframes fadeUp {
+    from { opacity: 0; translate: 0 24px; }
+    to   { opacity: 1; translate: 0 0; }
+  }
+
+  /* ══════════════════════════
+     HEADER
+  ══════════════════════════ */
+  .onb-header-wrap {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 16px;
+   margin: 4rem 0;
+  }
+
+  .onb-deco {
+    position: absolute;
+    opacity: 0.9;
+    pointer-events: none;
+  }
+
+  .onb-deco-tr {
+    top: -3rem;
+    right: -2rem;
+    width: 4rem;
+  }
+
+  .onb-title-wrapper {
+    position: relative;
+  }
+
+  .onb-title {
+    font-family: 'Magic Romance', sans-serif;
+    font-size: clamp(1.2rem, 5vw, 2.8rem);
+    font-weight: 400;
+    color: #F15A24;
+    text-align: center;
+    margin: 0;
+    line-height: 1.2;
+    position: relative;
+    opacity: 0;
+    animation: fadeUp 0.7s ease 0.1s forwards;
+    padding: 0 16px;
+  }
+
+  /* ══════════════════════════
+     CARDS WRAP
+  ══════════════════════════ */
+  .onb-wrap {
+    position: relative;
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    padding-bottom: 60px;
+    margin-bottom:5dvh;
+  }
+
+
+    .onb-cards {
+    padding: 2dvh 2dvw;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3dvw;
+    width: 100%;
+    overflow: visible;
+  }
+
+  .onb-card {
+    border-radius: 24px;
+    overflow: visible;
+    background: #E3B1D2;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    text-decoration: none;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(241, 90, 36, 0.08);
+  }
+
+  @media (min-width: 541px) {
+    .onb-card:hover {
+      transform: translateY(-6px) scale(1.03);
+      box-shadow: 0 12px 36px rgba(241, 90, 36, 0.18);
+    }
+  }
+
+  .onb-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: #fff;
+    color: #F15A24;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    z-index: 2;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+  .onb-badge svg { width: 14px; height: 14px; fill: #F15A24; }
+
+  .onb-card-img-wrap {
+    position: relative;
+    flex-shrink: 0;
+  }
+
+  .onb-card-img-wrap::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(to bottom, transparent, #E3B1D2 90%);
+    pointer-events: none;
+  }
+
+  .onb-card-img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+    border-radius: 24px 24px 0 0; /* ← añade esto */
+  }
+
+  .onb-card-content {
+    padding: 2rem;
+    padding-bottom: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+  }
+  .onb-card-content.recommended { padding-bottom: 1.5rem; }
+
+  .onb-card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex: 1;
+  }
+
+  .onb-card-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #F15A24;
+    margin: 0 0 10px;
+    line-height: 1.3;
+    height: 5rem;
+  }
+
+  .onb-card-text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: white;
+    line-height: 1.6;
+    margin: 0 0 20px;
+  }
+
+  .onb-card-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .onb-card-btn {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 2rem;
+    background: #F15A24;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+    width: fit-content;
+  }
+  .onb-card-btn:hover {
+    background: #d44a18;
+    color: #fff;
+    transform: scale(1.03);
+  }
+
+  .onb-card-note {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.7rem;
+    color: white;
+    opacity: 0.8;
+  }
+
+  /* Animaciones de entrada de cards */
+  .onb-card:nth-child(1) { opacity: 0; animation: fadeUp 0.7s ease 0.3s forwards; }
+  .onb-card:nth-child(2) { opacity: 0; animation: fadeUp 0.7s ease 0.5s forwards; }
+
+  /* Decoraciones inferiores */
+  .onb-page-deco {
+    position: absolute;
+    pointer-events: none;
+    opacity: 0.9;
+    z-index: 1;
+    width: 56px;
+  }
+  .onb-page-deco-bl {
+    bottom: -1dvh;
+    left: 0;
+    width: 4.5rem;
+    transform: rotate(-10deg);
+  }
+  .onb-page-deco-br {
+    bottom: -3dvh;
+    right: -3dvw;
+    width: 64px;
+    transform: rotate(8deg);
+  }
+
+  /* ══════════════════════════
+     RESPONSIVE
+  ══════════════════════════ */
+  @media (max-width: 750px) {
+    .onb-deco-tr {
+      top: -1rem;
+      width: 3rem;
+      right: -1rem;
+    }
+  }
+
+  @media (max-width: 540px) {
+    .onb-wrap { padding-bottom: 48px; }
+
+    .onb-cards { gap: 3rem; padding: 6px; }
+
+    .onb-card { height: auto; }
+
+    .onb-card-img { height: 45vw; }
+
+    .onb-card-content,
+    .onb-card-content.recommended {
+      padding: 10px;
+      padding-bottom: 14px;
+    }
+
+    .onb-card-title {
+      font-size: 3.8vw;
+      height: 4em;
+      margin-bottom: 12px;
+    }
+
+    .onb-card-btn {
+      font-size: 3.2vw;
+      padding: 10px 8px;
+      width: 100%;
+    }
+
+    .onb-card-text,
+    .onb-card-note { display: none; }
+
+    .onb-badge {
+      font-size: 0.65rem;
+      padding: 3px 7px;
+    }
+    .onb-badge svg { width: 10px; height: 10px; }
+
+    .onb-page-deco { width: 32px; }
+
+    .onb-page-deco-bl { left: 1rem; }
+
+    .onb-page-deco-br {
+      width: 40px;
+      right: 1rem;
+    }
+  }
+</style>
+
+<!-- HEADER -->
+<div id="onb-header" class="onb-header-wrap">
+  <div class="onb-title-wrapper">
+    <img class="onb-deco onb-deco-tr"
+      src="https://res.cloudinary.com/dra2cr3uw/image/upload/v1777977845/icono_1_onboarding_scnslu.png"
+      alt="">
+    <h1 class="onb-title">{{ 'custom.onboarding.heading' | t }}</h1>
+  </div>
+</div>
+
+<!-- CARDS -->
+<div class="onb-wrap">
+  <div class="onb-cards">
+
+    <!-- Tarjeta 1 -->
+    <a class="onb-card" href="/collections/all" onclick="elegir('ya-se')">
+      <div class="onb-card-img-wrap">
+        <img class="onb-card-img"
+          src="https://res.cloudinary.com/dra2cr3uw/image/upload/v1777884221/Chica_opcion_1_onboarding_ayfsqq.png"
+          alt="{{ 'custom.onboarding.card1_img_alt' | t }}">
+      </div>
+      <div class="onb-card-content">
+        <div class="onb-card-body">
+          <h2 class="onb-card-title">{{ 'custom.onboarding.card1_title' | t }}</h2>
+          <p class="onb-card-text">{{ 'custom.onboarding.card1_text' | t }}</p>
+        </div>
+        <div class="onb-card-footer">
+          <button class="onb-card-btn">{{ 'custom.onboarding.card1_btn' | t }}</button>
+        </div>
+      </div>
+    </a>
+
+    <!-- Tarjeta 2 -->
+    <a class="onb-card" href="/" onclick="elegir('no-se')">
+      <div class="onb-badge">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+        </svg>
+        {{ 'custom.onboarding.recommended' | t }}
+      </div>
+      <div class="onb-card-img-wrap">
+        <img class="onb-card-img"
+          src="https://res.cloudinary.com/dra2cr3uw/image/upload/v1777977324/Chica_opcion_2_onboarding_dgscyw.png"
+          alt="{{ 'custom.onboarding.card2_img_alt' | t }}">
+      </div>
+      <div class="onb-card-content recommended">
+        <div class="onb-card-body">
+          <h2 class="onb-card-title">{{ 'custom.onboarding.card2_title' | t }}</h2>
+          <p class="onb-card-text">{{ 'custom.onboarding.card2_text' | t }}</p>
+        </div>
+        <div class="onb-card-footer">
+          <button class="onb-card-btn">{{ 'custom.onboarding.card2_btn' | t }}</button>
+          <span class="onb-card-note">{{ 'custom.onboarding.card2_note' | t }}</span>
+        </div>
+      </div>
+    </a>
+
+  </div>
+
+  <img class="onb-page-deco onb-page-deco-bl"
+    src="https://res.cloudinary.com/dra2cr3uw/image/upload/v1777977845/icono_2_onboarding_gf8345.png"
+    alt="">
+  <img class="onb-page-deco onb-page-deco-br"
+    src="https://res.cloudinary.com/dra2cr3uw/image/upload/v1777977845/icono_3_onboarding_ndslgm.png"
+    alt="">
+</div>
+
+<script>
+  // Si ya hizo el onboarding en esta sesión, lo mandamos al landing
+  if (sessionStorage.getItem('skintrip_onboarding_done')) {
+    window.location.replace('/');
+  }
+
+  function elegir(opcion) {
+    sessionStorage.setItem('skintrip_onboarding_done', 'true');
+    sessionStorage.setItem('skintrip_eleccion', opcion);
+  }
+</script>

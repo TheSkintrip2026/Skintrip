@@ -1,0 +1,56 @@
+{{ 'cta.css' | asset_url | stylesheet_tag }}
+
+<div class="cta">
+  {%- if section.settings.icon != blank -%}
+    {{ section.settings.icon | image_url: width: 180 | image_tag:
+      class: 'cta__icon',
+      alt: 'decorative icon',
+      loading: 'lazy'
+    }}
+  {%- else -%}
+    <img src="{{ 'cta-icon.png' | asset_url }}" class="cta__icon" alt="decorative icon" loading="lazy">
+  {%- endif -%}
+
+  <div class="cta__content">
+    <p class="cta__title">{{ section.settings.title }}</p>
+    <a href="{{ section.settings.button_link }}" class="cta__btn">
+      {{ section.settings.button_text }}
+    </a>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "CTA",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "¡Comencemos!"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "Hacer el test"
+    },
+    {
+      "type": "text",
+      "id": "button_link",
+      "label": "Button link",
+      "default": "/#quiz-gWHrq0"
+    },
+    {
+      "type": "image_picker",
+      "id": "icon",
+      "label": "Decorative icon"
+    }
+  ],
+  "presets": [
+    {
+      "name": "CTA"
+    }
+  ]
+}
+{% endschema %}

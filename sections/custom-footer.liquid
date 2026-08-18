@@ -1,0 +1,343 @@
+{% comment %} custom-footer.liquid {% endcomment %}
+
+{{ 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css' | stylesheet_tag }}
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+  @font-face {
+    font-family: 'Magic Romance';
+    src: url('{{ "magic-romance.woff2" | asset_url }}') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  .footer-section {
+    background: #1a1a1a;
+    padding: 60px 8% 30px;
+    box-sizing: border-box;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .footer-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: 0;
+  }
+
+  .footer-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.92);
+    z-index: 1;
+  }
+
+  .footer-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+
+  .footer-top {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 40px 60px;
+    padding-bottom: 50px;
+  }
+
+  .footer-brand .footer-logo {
+    font-family: 'Magic Romance', serif;
+    font-size: 3.5rem;
+    color: #F15A24;
+    margin: 0 0 8px;
+    line-height: 1;
+  }
+
+  .footer-brand .footer-tagline {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.85rem;
+    color: #F15A24;
+    margin: 0 0 30px;
+    font-style: italic;
+  }
+
+  .footer-brand .footer-watermark {
+    font-family: 'Magic Romance', serif;
+    font-size: 5rem;
+    color: rgba(241, 90, 36, 0.12);
+    margin: 0;
+    line-height: 1;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  .footer-col-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin: 0 0 20px;
+  }
+
+  .footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .footer-links li a {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+    color: #aaa;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-links li a:hover {
+    color: #F15A24;
+  }
+
+  .footer-social {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 30px;
+  }
+
+  .footer-social a {
+    color: #fff;
+    font-size: 1.5rem;
+    text-decoration: none;
+    transition: color 0.2s;
+    display: flex;
+    align-items: center;
+  }
+
+  .footer-social a:hover {
+    color: #F15A24;
+  }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    position: relative;
+    padding-bottom: 10px;
+  }
+
+  .footer-copyright {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.78rem;
+    color: #666;
+    text-align: center;
+    margin: 0;
+  }
+
+  .footer-copyright a {
+    color: #666;
+    text-decoration: underline;
+  }
+
+  .footer-payments {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .footer-payments img {
+    height: 28px;
+    object-fit: contain;
+    border-radius: 4px;
+    background: #fff;
+    padding: 2px 5px;
+  }
+
+  .footer-deco-icon {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 80px;
+    opacity: 0.9;
+  }
+
+  @media (max-width: 768px) {
+    .footer-top {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+    .footer-brand .footer-watermark {
+      font-size: 3rem;
+    }
+    .footer-deco-icon {
+      width: 55px;
+    }
+  }
+</style>
+
+<div class="footer-section">
+  <img
+  class="footer-bg"
+  src="{{ section.settings.background_image | img_url: 'master' }}"
+  alt=""
+  width="{{ section.settings.background_image.width }}"
+  height="{{ section.settings.background_image.height }}"
+  loading="lazy">
+  <div class="footer-overlay"> </div>
+  <div class="footer-inner">
+
+    <div class="footer-top">
+
+      <div class="footer-brand">
+        <div class="footer-logo-header">
+
+          <h2 class="footer-logo">{{ section.settings.brand_name }}</h2>
+          <p class="footer-tagline">{{ section.settings.brand_tagline }}</p>
+        </div>
+        <div class="footer-social">
+          {% if section.settings.instagram_url != blank %}
+            <a href="{{ section.settings.instagram_url }}" target="_blank" aria-label="Instagram">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+          {% endif %}
+          {% if section.settings.linkedin_url != blank %}
+            <a href="{{ section.settings.linkedin_url }}" target="_blank" aria-label="LinkedIn">
+              <i class="fa-brands fa-linkedin"></i>
+            </a>
+          {% endif %}
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h3 class="footer-col-title">{{ section.settings.col1_title }}</h3>
+        <ul class="footer-links">
+          {% for link in linklists[section.settings.col1_menu].links %}
+            <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3 class="footer-col-title">{{ section.settings.col2_title }}</h3>
+        <ul class="footer-links">
+          {% for link in linklists[section.settings.col2_menu].links %}
+            <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+      <p class="footer-copyright">
+        &copy; {{ 'now' | date: '%Y' }}, <a href="/">{{ shop.name }}</a> &mdash;
+        <a href="https://www.shopify.com" target="_blank">{{ 'custom.footer.powered_by' | t }}</a>
+      </p>
+
+      <div class="footer-payments">
+        {% for type in shop.enabled_payment_types %}
+           <img
+      src="{{ type | payment_type_img_url }}"
+      alt="{{ type }}"
+      width="38"
+      height="24"
+      loading="lazy">
+        {% endfor %}
+      </div>
+
+     <img
+  class="footer-deco-icon"
+  src="{{ section.settings.deco_icon | img_url: 'master' }}"
+  alt="{{ 'custom.footer.deco_alt' | t }}"
+  width="80"
+  height="80"
+  loading="lazy">
+
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Footer personalizado",
+  "settings": [
+    {
+      "type": "text",
+      "id": "brand_name",
+      "label": "Nombre de la marca",
+      "default": "Skintrip"
+    },
+    {
+      "type": "text",
+      "id": "brand_tagline",
+      "label": "Tagline",
+      "default": "Tu rutina de belleza a tu medida"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Imagen de fondo"
+    },
+    {
+      "type": "image_picker",
+      "id": "deco_icon",
+      "label": "Icono decorativo (esquina inferior derecha)"
+    },
+    {
+      "type": "url",
+      "id": "instagram_url",
+      "label": "URL de Instagram"
+    },
+    {
+      "type": "url",
+      "id": "linkedin_url",
+      "label": "URL de LinkedIn"
+    },
+    {
+      "type": "text",
+      "id": "col1_title",
+      "label": "Título columna 1",
+      "default": "Servicio al cliente"
+    },
+    {
+      "type": "link_list",
+      "id": "col1_menu",
+      "label": "Menú columna 1"
+    },
+    {
+      "type": "text",
+      "id": "col2_title",
+      "label": "Título columna 2",
+      "default": "Información"
+    },
+    {
+      "type": "link_list",
+      "id": "col2_menu",
+      "label": "Menú columna 2"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Footer personalizado"
+    }
+  ]
+}
+{% endschema %}

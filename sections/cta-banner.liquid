@@ -1,0 +1,80 @@
+{{ 'cta-banner.css' | asset_url | stylesheet_tag }}
+
+<div class="cta-banner">
+  {%- if section.settings.bg_image != blank -%}
+    {{ section.settings.bg_image | image_url: width: 1200 | image_tag:
+      class: 'cta-banner__bg',
+      alt: 'background',
+      loading: 'lazy'
+    }}
+  {%- else -%}
+    <img src="{{ 'cta-banner-bg.png' | asset_url }}" class="cta-banner__bg" alt="background" loading="lazy">
+  {%- endif -%}
+
+  <div class="cta-banner__overlay"> </div>
+
+  <div class="cta-banner__container">
+    {%- if section.settings.icon != blank -%}
+      {{ section.settings.icon | image_url: width: 120 | image_tag:
+        class: 'cta-banner__icon',
+        alt: 'icon',
+        loading: 'lazy'
+      }}
+    {%- else -%}
+      <img src="{{ 'cta-banner-icon.png' | asset_url }}" class="cta-banner__icon" alt="icon" loading="lazy">
+    {%- endif -%}
+
+    <h2 class="cta-banner__title">{{ section.settings.title }}</h2>
+    <p class="cta-banner__subtitle">{{ section.settings.subtitle }}</p>
+    <a href="{{ section.settings.button_link }}" class="cta-banner__btn">
+      {{ section.settings.button_text }}
+    </a>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "CTA Banner",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Encuentra tu rutina"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Tu rutina hecha con productos a tu medida"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "Haz el test"
+    },
+    {
+      "type": "text",
+      "id": "button_link",
+      "label": "Button link",
+      "default": "/#quiz-gWHrq0"
+    },
+    {
+      "type": "image_picker",
+      "id": "bg_image",
+      "label": "Background image"
+    },
+    {
+      "type": "image_picker",
+      "id": "icon",
+      "label": "Decorative icon"
+    }
+  ],
+  "presets": [
+    {
+      "name": "CTA Banner"
+    }
+  ]
+}
+{% endschema %}

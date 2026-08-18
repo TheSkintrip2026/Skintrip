@@ -1,0 +1,36 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "consent": {
+      "type": "face-age-consent",
+      "settings": {}
+    },
+    "1779360790fe187390": {
+      "type": "apps",
+      "blocks": {
+        "face_age_skincare_analyzer_qMBret": {
+          "type": "shopify://apps/face-age/blocks/skincare_analyzer/043acb67-6ee1-4433-bc05-31a4f8d134e0",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "face_age_skincare_analyzer_qMBret"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    }
+  },
+  "order": [
+    "consent",
+    "1779360790fe187390"
+  ]
+}

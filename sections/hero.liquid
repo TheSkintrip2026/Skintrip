@@ -1,0 +1,83 @@
+{{ 'hero.css' | asset_url | stylesheet_tag }}
+
+<div class="skintrip-hero">
+  <div class="skintrip-hero__container">
+
+    <div class="skintrip-hero__content">
+      <h2 class="skintrip-hero__title">{{ section.settings.titulo }}</h2>
+      <p class="skintrip-hero__text">{{ section.settings.subtitulo }}</p>
+      <a href="{{ section.settings.boton_link  | default: '/#quiz-gWHrq0'}}" class="skintrip-hero__btn">
+        {{ section.settings.boton_texto }}
+      </a>
+    </div>
+
+ <div class="skintrip-hero__image-wrapper">
+  {%- if section.settings.imagen != blank -%}
+    {{ section.settings.imagen | image_url: width: 600 | image_tag:
+      class: 'skintrip-hero__image',
+      alt: section.settings.imagen.alt,
+      loading: 'lazy'
+    }}
+  {%- else -%}
+    <img src="{{ 'hero-girl-image.png' | asset_url }}" class="skintrip-hero__image" alt="imagen por defecto" loading="lazy">
+  {%- endif -%}
+</div>
+
+{%- if section.settings.icono != blank -%}
+  {{ section.settings.icono | image_url: width: 150 | image_tag:
+    class: 'skintrip-hero__icon',
+    alt: 'icono decorativo',
+    loading: 'lazy'
+  }}
+{%- else -%}
+  <img src="{{ 'hero-icon.png' | asset_url }}" class="skintrip-hero__icon" alt="icono" loading="lazy">
+{%- endif -%}
+
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Hero Principal",
+  "settings": [
+    {
+      "type": "text",
+      "id": "titulo",
+      "label": "Título",
+      "default": "Descubre qué necesita tu piel en 2 minutos."
+    },
+    {
+      "type": "textarea",
+      "id": "subtitulo",
+      "label": "Subtítulo",
+      "default": "Haz nuestro test, recibe un diagnóstico personalizado, recomendación de productos y una rutina diseñada para ti."
+    },
+    {
+      "type": "text",
+      "id": "boton_texto",
+      "label": "Texto del botón",
+      "default": "Hacer el test"
+    },
+    {
+      "type": "url",
+      "id": "boton_link",
+      "label": "Link del botón",
+    },
+    {
+      "type": "image_picker",
+      "id": "imagen",
+      "label": "Imagen principal"
+    },
+    {
+      "type": "image_picker",
+      "id": "icono",
+      "label": "Icono decorativo"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero Principal"
+    }
+  ]
+}
+{% endschema %}

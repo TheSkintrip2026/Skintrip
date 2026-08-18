@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+.experience-cards {
+  font-family: 'Poppins', sans-serif;
+  padding: 40px 20px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+  flex-wrap: wrap;
+}
+
+.experience-card {
+  border-radius: 28px;
+  overflow: hidden;
+  width: 25rem;
+  height: 680px;
+  display: flex;
+  flex-direction: column;
+  background: #E3B1D2;
+  position: relative;
+}
+
+.experience-card--featured {
+  width: 28rem;
+  height: 75rem;
+}
+
+.experience-card--slide-left {
+  opacity: 0;
+  transform: translateX(-80px);
+  transition: opacity 1s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.experience-card--slide-right {
+  opacity: 0;
+  transform: translateX(80px);
+  transition: opacity 1s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.experience-card--slide-left.visible,
+.experience-card--slide-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.experience-card__image-wrap {
+  position: relative;
+  flex-shrink: 0;
+  height: 22rem;
+}
+
+.experience-card--featured .experience-card__image-wrap {
+  height: 25rem;
+}
+
+.experience-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+.experience-card__image-fade {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  top: 25%;
+  background: linear-gradient(to bottom, transparent,
+    rgba(227,177,210,0) 20%,
+    rgba(227,177,210,1) 90%,
+    rgba(227,177,210,1) 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.experience-card__badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: #fff;
+  border-radius: 30px;
+  padding: 5px 14px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #F15A24;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  z-index: 2;
+}
+
+.experience-card__body {
+  padding: 0 20px 22px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow: hidden;
+}
+
+.experience-card__title {
+  font-size: 2.3rem;
+  font-weight: 700;
+  color: #F15A24;
+  text-transform: uppercase;
+  text-align: center;
+  flex-shrink: 0;
+  margin: 0;
+}
+
+.experience-card--featured .experience-card__title {
+  font-size: 2.6rem;
+  margin-bottom: 0.5rem;
+}
+
+.experience-card__subtitle {
+  font-size: 0.8rem;
+  color: #F15A24;
+  text-align: center;
+  font-style: italic;
+  flex-shrink: 0;
+  margin: 0;
+}
+
+.experience-card__features {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0 16px;
+  flex: 1;
+  overflow: hidden;
+  line-height: 2.2rem;
+}
+
+.experience-card__features li {
+  font-size: 1.1rem;
+  color: #ffffff;
+  padding: 3px 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.experience-card--featured .experience-card__features li {
+  font-size: 1.3rem;
+}
+
+.experience-card__features li::before {
+  content: '•';
+  color: #ffffff;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.experience-card__btn {
+  display: block;
+  width: 100%;
+  padding: 13px;
+  border-radius: 30px;
+  background: #F15A24;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  flex-shrink: 0;
+  text-decoration: none;
+}
+
+.experience-card--featured .experience-card__btn {
+  font-size: 15px;
+  padding: 15px;
+}
+
+.experience-card__btn:hover {
+  background: #d44a18;
+}
+
+@media (max-width: 768px) {
+  .experience-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .experience-card,
+  .experience-card--featured {
+    width: 280px;
+    height: auto;
+  }
+
+  .experience-card--featured {
+    order: -1;
+  }
+
+  .experience-card--slide-left,
+  .experience-card--slide-right {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

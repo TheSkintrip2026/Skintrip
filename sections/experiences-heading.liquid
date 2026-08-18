@@ -1,0 +1,46 @@
+{{ 'experiences-heading.css' | asset_url | stylesheet_tag }}
+
+<div class="experience-heading">
+  {%- if section.settings.icon != blank -%}
+    {{ section.settings.icon | image_url: width: 150 | image_tag:
+      class: 'experience-heading__icon',
+      alt: 'decorative icon',
+      loading: 'lazy'
+    }}
+  {%- else -%}
+    <img src="{{ 'header-exp-icon.png' | asset_url }}" class="experience-heading__icon" alt="decorative icon" loading="lazy">
+  {%- endif -%}
+
+  <h2 class="experience-heading__title">{{ section.settings.title }}</h2>
+  <p class="experience-heading__subtitle">{{ section.settings.subtitle }}</p>
+</div>
+
+{% schema %}
+{
+  "name": "Experience Heading",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "ELIGE TU EXPERIENCIA"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "No todas las pieles necesitan lo mismo.\nPor eso creamos diferentes formas de vivir tu rutina."
+    },
+    {
+      "type": "image_picker",
+      "id": "icon",
+      "label": "Decorative icon"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Experience Heading"
+    }
+  ]
+}
+{% endschema %}

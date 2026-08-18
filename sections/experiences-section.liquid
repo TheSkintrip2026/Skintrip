@@ -1,0 +1,423 @@
+<div class="experiences-section">
+  <div class="experiences-section-content">
+    <div class="experiences-header">
+      <div class="header-icon">
+        <img
+          width="64"
+          height="64"
+          src="https://res.cloudinary.com/dra2cr3uw/image/upload/v1777422106/Component_20_1_pkpnzf.png"
+          alt="experiences icon"
+        >
+      </div>
+      <div class="title">
+        <span>{{ 'custom.experiences.heading' | t }}</span>
+      </div>
+      <div class="sub-title">
+        <span>{{ 'custom.experiences.subheading' | t }}</span>
+      </div>
+    </div>
+    <div class="cards-section">
+      <div class="card">
+        <div class="card-image">
+          <img
+            width="64"
+            height="64"
+            src="https://res.cloudinary.com/dra2cr3uw/image/upload/v1777422919/image_4_f53fbw.png"
+            alt="experience image 1"
+          >
+        </div>
+        <div class="card-content">
+          <div class="card-gradient"></div>
+          <div class="card-body">
+            <div class="card-body-header">
+              <div class="card-title">{{ 'custom.experiences.card1_title' | t }}</div>
+              <div class="card-sub-title">{{ 'custom.experiences.card1_subtitle' | t }}</div>
+            </div>
+            <div class="card-body-text">
+              <ul>
+                <li>{{ 'custom.experiences.card1_feature1' | t }}</li>
+                <li>{{ 'custom.experiences.card1_feature2' | t }}</li>
+                <li>{{ 'custom.experiences.card1_feature3' | t }}</li>
+              </ul>
+            </div>
+          </div>
+          <div class="card-footer">
+            <button class="card-button">{{ 'custom.experiences.card1_btn' | t }}</button>
+          </div>
+        </div>
+      </div>
+      <div class="card" id="recommended-card">
+        <div class="text-recommended-container">
+          <div class="text-recommended">
+            <i class="fa-regular fa-heart"></i>
+            <span>{{ 'custom.experiences.recommended_badge' | t }}</span>
+          </div>
+        </div>
+        <div class="card-image">
+          <img
+            width="64"
+            height="64"
+            src="https://res.cloudinary.com/dra2cr3uw/image/upload/v1777426477/Gemini_Generated_Image_dw21t3dw21t3dw21_2_ggmrkn.png"
+            alt="experience image 1"
+          >
+        </div>
+        <div class="card-content">
+          <div class="card-gradient"></div>
+          <div class="card-body">
+            <div class="card-body-header">
+              <div class="card-title">{{ 'custom.experiences.card2_title' | t }}</div>
+              <div class="card-sub-title">{{ 'custom.experiences.card2_subtitle' | t }}</div>
+            </div>
+            <div class="card-body-text">
+              <ul>
+                <li class="prev-text">{{ 'custom.experiences.card2_feature1' | t }}</li>
+                <li class="prev-text">{{ 'custom.experiences.card2_feature2' | t }}</li>
+                <li class="prev-text">{{ 'custom.experiences.card2_feature3' | t }}</li>
+                <li>{{ 'custom.experiences.card2_feature4' | t }}</li>
+                <li>{{ 'custom.experiences.card2_feature5' | t }}</li>
+                <li>{{ 'custom.experiences.card2_feature6' | t }}</li>
+                <li>{{ 'custom.experiences.card2_feature7' | t }}</li>
+              </ul>
+            </div>
+          </div>
+          <div class="card-footer">
+            <button class="card-button">{{ 'custom.experiences.card2_btn' | t }}</button>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-image">
+          <img
+            width="64"
+            height="64"
+            src="https://res.cloudinary.com/dra2cr3uw/image/upload/v1777426542/image_22_ffvvfe.png"
+            alt="experience image 1"
+          >
+        </div>
+        <div class="card-content">
+          <div class="card-gradient"></div>
+          <div class="card-body">
+            <div class="card-body-header">
+              <div class="card-title">{{ 'custom.experiences.card3_title' | t }}</div>
+              <div class="card-sub-title">{{ 'custom.experiences.card3_subtitle' | t }}</div>
+            </div>
+            <div class="card-body-text">
+              <ul>
+                <li class="prev-text">{{ 'custom.experiences.card3_feature1' | t }}</li>
+                <li class="prev-text">{{ 'custom.experiences.card3_feature2' | t }}</li>
+                <li class="prev-text">{{ 'custom.experiences.card3_feature3' | t }}</li>
+                <li class="prev-text">{{ 'custom.experiences.card3_feature4' | t }}</li>
+                <li class="prev-text">{{ 'custom.experiences.card3_feature5' | t }}</li>
+                <li class="prev-text">{{ 'custom.experiences.card3_feature6' | t }}</li>
+                <li class="prev-text">{{ 'custom.experiences.card3_feature7' | t }}</li>
+                <li>{{ 'custom.experiences.card3_feature8' | t }}</li>
+                <li>{{ 'custom.experiences.card3_feature9' | t }}</li>
+                <li>{{ 'custom.experiences.card3_feature10' | t }}</li>
+              </ul>
+            </div>
+          </div>
+          <div class="card-footer">
+            <button class="card-button">{{ 'custom.experiences.card3_btn' | t }}</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<style>
+  .experiences-section{
+    display:flex !important;
+    justify-content: center !important;
+    margin: 5rem 0 !important;
+}
+
+.experiences-section-content{
+    max-width:1000px !important;
+    width:100% !important;
+}
+
+/* Seccion header */
+
+.header{
+    text-align:center !important;
+    color:#F15A24 !important;
+    position:relative !important;
+}
+.header-icon{
+    position:absolute !important;
+    bottom:-40% !important;
+    right:18% !important;
+}
+
+.header-icon img {
+    width: 3rem !important;
+}
+
+.experiences-header .title span {
+     font-family: "Playfair Display",serif !important;
+     font-size: 5rem !important;
+}
+
+.experiences-header .sub-title span{
+    font-family: "Poppins", sans-serif !important;
+}
+
+/* Seccion Cards Section */
+
+.cards-section{
+    margin: 8rem 0 !important;
+    display:flex !important;
+    justify-content:space-between !important;
+    align-items:center !important;
+}
+
+/* Card general */
+
+.card {
+    width: 18rem !important;
+    height:60rem !important;
+    background:grey !important;
+    border-radius:2.5rem !important;
+    overflow:hidden !important;
+    display:flex !important;
+    flex-direction:column !important;
+    font-family: "Poppins" !important;
+    text-align:center !important;
+}
+
+#recommended-card {
+    height:65rem !important;
+    width:20rem !important;
+    position:relative !important;
+}
+
+/* Burbuja de recomendado */
+
+.text-recommended-container {
+    position:absolute !important;
+    top:2% !important;
+    left:5% !important;
+}
+
+.text-recommended{
+    background:white !important;
+    color: #F15A24 !important;
+    padding: 1rem 1rem !important;
+    border-radius:2rem !important;
+}
+
+/* Card Image */
+
+.card-image {
+    width:100% !important;
+    aspect-ratio: 9/10 !important;
+    overflow:hidden !important;
+}
+
+#recommended-card .card-image img{
+    height:150% !important;
+    object-position:center !important;
+    object-fit:cover !important;
+}
+
+img{
+    height:100% !important;
+    width:100% !important;
+    object-fit: cover !important;
+    object-position:top !important;
+}
+
+/* Card Content */
+.card-content{
+    background: #E3B1D2 !important;
+    flex:1 !important;
+    display:flex !important;
+    flex-direction:column !important;
+    justify-content:space-between !important;
+    align-items:center !important;
+    padding:1rem 0 2rem !important;
+    position:relative !important;
+}
+
+/* Card Gradient */
+.card-gradient{
+    position:absolute !important;
+    background: linear-gradient(to bottom, transparent, 
+    #E3B1D2,
+    #E3B1D2, 
+    #e3b1d2) !important;
+    top:-50% !important;
+    left:0 !important;
+    right:0 !important;
+    bottom:0 !important;
+}
+
+/* Card Body Header  */
+.card-body-header{
+    color:#F15A24 !important;
+    position:relative !important;
+}
+
+.card-title{
+    font-size:1.8rem !important;
+    font-weight: 600 !important;
+    margin-bottom:0.2rem !important;
+}
+
+.card-sub-title{
+    font-size:0.8rem !important;
+}
+
+/* Card Body Text */
+
+.card-body-text{
+    position:relative !important;
+    text-align:left !important;
+    font-size:0.9rem !important;
+    color:white !important;
+}
+
+.card-body-text ul{
+    line-height:2.5rem !important;
+}
+
+.card-body-text ul li {
+    font-weight: 500 !important;
+}
+
+.card-body-text ul li.prev-text{
+    font-weight:50 !important;
+}
+
+/* Card Footer Btn */
+
+.card-footer .card-button{
+    position:relative !important;
+    background: #F15A24 !important;
+    border:0 !important;
+    padding: 1rem 3rem !important;
+    font-family: "Poppins" !important;
+    font-weight: 600 !important;
+    font-size:1.1rem !important;
+    color: white !important;
+    border-radius:4rem !important;
+    transition: transform 0.3s ease !important;
+}
+
+.card-footer .card-button:hover {
+    cursor:pointer !important;
+    transform: scale(1.05) !important;
+    background: #f06734 !important;
+}
+
+.card-footer .card-button:active{
+    background:#c64414 !important;
+}
+
+</style>
+
+{% schema %}
+{
+  "name": "Experiences Section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "icon",
+      "label": "Header icon"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "ELIGE TU EXPERIENCIA"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "No todas las pieles necesitan lo mismo. Por eso creamos diferentes formas de vivir tu rutina."
+    },
+    {
+      "type": "range",
+      "id": "container_width",
+      "label": "Max width (px)",
+      "min": 600,
+      "max": 1600,
+      "step": 50,
+      "default": 1000
+    },
+    {
+      "type": "range",
+      "id": "section_margin_top",
+      "label": "Margin top (px)",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "section_margin_bottom",
+      "label": "Margin bottom (px)",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "cards_spacing",
+      "label": "Space between header and cards (rem)",
+      "min": 5,
+      "max": 25,
+      "step": 1,
+      "default": 10
+    }
+  ],
+  "blocks": [
+    {
+      "type": "card",
+      "name": "Card",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "badge_text",
+          "label": "Badge text"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "text",
+          "id": "subtitle",
+          "label": "Subtitle"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Content"
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button text"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 6,
+  "presets": [
+    {
+      "name": "Experiences Section",
+      "blocks": [{ "type": "card" }, { "type": "card" }, { "type": "card" }]
+    }
+  ]
+}
+{% endschema %}

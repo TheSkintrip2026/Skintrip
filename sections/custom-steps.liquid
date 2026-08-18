@@ -1,0 +1,276 @@
+{% comment %}
+Step section - Shopify Section (editable + optimized)
+{% endcomment %}
+
+<section class="step-section-wrapper">
+  <div class="step-section-content">
+
+    <div class="step-line" aria-hidden="true"> </div>
+
+    {% for block in section.blocks %}
+      <div class="step-item" {{ block.shopify_attributes }}>
+        <div class="icon-section">
+
+          <div class="icon-wrapper">
+            {% if block.settings.icon != blank %}
+              <img 
+                src="{{ block.settings.icon | image_url }}" 
+                alt="icon"
+                width="64"
+                height="64"
+                loading="lazy"
+              />
+            {% endif %}
+          </div>
+        </div>
+
+         <div class="text-wrapper">
+          <span style="color: {{ block.settings.step_color }}">
+            {% case forloop.index0 %}
+              {% when 0 %}
+                {% assign fallback_text = 'custom.steps.fallback_1' | t %}
+              {% when 1 %}
+                {% assign fallback_text = 'custom.steps.fallback_2' | t %}
+              {% when 2 %}
+                {% assign fallback_text = 'custom.steps.fallback_3' | t %}
+              {% else %}
+                {% assign fallback_text = "" %}
+            {% endcase %}
+
+            {{ block.settings.text | default: fallback_text }}
+          </span>
+        </div>
+      </div>
+    {% endfor %}
+
+  </div>
+</section>
+
+<style>
+.step-section-wrapper {
+  margin: 10vh 0 !important;
+  display: flex !important;
+  justify-content: center !important;
+}
+
+.step-section-content {
+  display: flex !important;
+  justify-content: center !important;
+  gap: 5vw !important;
+  position: relative !important;
+}
+
+.step-line {
+  position: absolute !important;
+  background: {{ section.settings.line_color }} !important;
+  right: 0 !important;
+  left: 0 !important;
+  margin: 0 10rem !important;
+  top: 25% !important;
+  height: 0.2rem !important; 
+  height: {{ section.settings.line_thickness }}px !important;
+   margin: 0 {{section.settings.line_distance}}rem!important;
+}
+
+.step-item {
+  text-align: center !important;
+  background: #ffffff !important;
+  min-height: 5rem !important;
+  flex: 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  padding: 1rem !important;
+}
+
+  .icon-section {
+      background: rgb(255, 255, 255);
+      position: relative;
+      padding: 0.5rem;
+    }
+
+.icon-wrapper {
+    width: {{section.settings.icon_size}}px !important;
+    aspect-ratio: 1/1;
+    padding: 1rem;
+    background: #F15A24;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+}
+
+.icon-wrapper img {
+ width: 100%;
+  height: 100%;
+}
+
+.text-wrapper {
+  color: #F15A24 !important;
+  margin: 1rem !important;
+  width: 100% !important;
+}
+
+@media (max-width: 768px) {
+  .step-section-content {
+    flex-direction: column !important;
+    align-items: center !important;
+
+  }
+
+  .step-line {
+    top: 0 !important;
+    bottom: 0 !important;
+    left: 50% !important;
+    right: auto !important;
+    width: 0.2rem !important;
+    height: 100% !important;
+    transform: translateX(-50%) !important;
+    margin: 0 !important;
+
+
+  }
+
+  .step-item {
+    position: relative !important;
+    width: {{section.settings.step_item_mb_size}}rem !important;
+    justify-content:center;
+  }
+}
+</style>
+
+{% schema %}
+{
+  "name": "Step section",
+  "settings": [
+    {
+      "type": "color",
+      "id": "line_color",
+      "label": "Line color",
+      "default": "#E3B1D2"
+    },
+    {
+      "type": "range",
+      "id": "line_thickness",
+      "label": "Line thickness",
+      "min": 1,
+      "max": 10,
+      "step": 1,
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "line_distance",
+      "label": "Line distance",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "section_spacing",
+      "label": "Vertical spacing",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "step_item_mb_size",
+      "label": "Step item mobile width",
+      "min": 0,
+      "max": 20,
+      "step": 0.5,
+      "default": 10
+    },
+    {
+      "type": "select",
+      "id": "layout_alignment",
+      "label": "Layout alignment",
+      "options": [
+        { "value": "center", "label": "Center" },
+        { "value": "flex-start", "label": "Left" },
+        { "value": "flex-end", "label": "Right" }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_line_mobile",
+      "label": "Show connector line on mobile",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_animation",
+      "label": "Enable fade-in animation",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "icon_size",
+      "label": "Icon size",
+      "min": 32,
+      "max": 120,
+      "step": 4,
+      "default": 64
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#F15A24"
+    },
+    {
+      "type": "select",
+      "id": "container_width",
+      "label": "Container width",
+      "options": [
+        { "value": "full", "label": "Full width" },
+        { "value": "page", "label": "Page width" },
+        { "value": "narrow", "label": "Narrow" }
+      ],
+      "default": "page"
+    }
+  ],
+"blocks": [
+    {
+      "type": "step",
+      "name": "Step",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Step text",
+          "placeholder": "Edit this step text"
+        },
+        {
+          "type": "color",
+          "id": "step_color",
+          "label": "Text color",
+          "default": "#F15A24"
+        }
+      ]
+    }
+  ],
+
+  "max_blocks": 6,
+
+  "presets": [
+    {
+      "name": "Step section",
+      "blocks": [
+        { "type": "step" },
+        { "type": "step" },
+        { "type": "step" }
+      ]
+    }
+  ]
+}
+{% endschema %}

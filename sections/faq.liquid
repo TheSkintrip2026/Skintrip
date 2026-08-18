@@ -1,0 +1,172 @@
+{{ 'faq.css' | asset_url | stylesheet_tag }}
+
+<div class="faq-wrapper">
+  <div class="faq">
+    <div class="faq__inner">
+      <div class="faq__header">
+        <h2 class="faq__title">{{ section.settings.title }}</h2>
+        <p class="faq__subtitle">{{ section.settings.subtitle }}</p>
+      </div>
+
+      {%- if section.settings.icon != blank -%}
+        {{
+          section.settings.icon
+          | image_url: width: 140
+          | image_tag: class: 'faq__icon', alt: 'icon', loading: 'lazy'
+        }}
+      {%- else -%}
+        <img src="{{ 'faq-icon.png' | asset_url }}" class="faq__icon" alt="icon" loading="lazy">
+      {%- endif -%}
+
+      <div class="faq__grid">
+        {%- for block in section.blocks -%}
+          <div class="faq__item" {{ block.shopify_attributes }}>
+            <div class="faq__question">
+              <p class="faq__question-text">{{ block.settings.question }}</p>
+              <button class="faq__toggle" onclick="toggleFaq(this)">+</button>
+            </div>
+            <div class="faq__answer{% if block.settings.large %} large{% endif %}">
+              {{ block.settings.answer }}
+            </div>
+          </div>
+        {%- endfor -%}
+      </div>
+
+      <div class="faq__contact">
+        {{ section.settings.contact_text }}
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function toggleFaq(btn) {
+    const item = btn.closest('.faq__item');
+    const answer = item.querySelector('.faq__answer');
+    const isOpen = answer.classList.contains('open');
+
+    document.querySelectorAll('.faq__answer').forEach(function (a) {
+      a.classList.remove('open');
+    });
+    document.querySelectorAll('.faq__toggle').forEach(function (b) {
+      b.classList.remove('open');
+    });
+
+    if (!isOpen) {
+      answer.classList.add('open');
+      btn.classList.add('open');
+    }
+  }
+</script>
+
+{% schema %}
+{
+  "name": "FAQ",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Preguntas Frecuentes"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "¿Tienes dudas? Te ayudamos aquí."
+    },
+    {
+      "type": "image_picker",
+      "id": "icon",
+      "label": "Icon"
+    },
+    {
+      "type": "richtext",
+      "id": "contact_text",
+      "label": "Contact text",
+      "default": "<p>Si tienes cualquier otra consulta, siempre puedes escribirnos por el formulario de contacto en nuestra web, por mail <a href='mailto:hola@theskintrip.com'>hola@theskintrip.com</a> e incluso por <a href='https://www.instagram.com/theskintrip.ue/'>Instagram</a>.</p>"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "faq_item",
+      "name": "FAQ Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question",
+          "default": "¿Cuál es tu pregunta?"
+        },
+        {
+          "type": "richtext",
+          "id": "answer",
+          "label": "Answer",
+          "default": "<p>Escribe aquí la respuesta.</p>"
+        },
+        {
+          "type": "checkbox",
+          "id": "large",
+          "label": "Large answer (more height)",
+          "default": false
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "FAQ",
+      "blocks": [
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "¡No sé qué producto elegir!",
+            "answer": "<p>¡No te preocupes! Sabemos que hay muchas opciones disponibles pero estamos aquí para ayudarte. Puedes realizar nuestro test y te enviaremos tu reporte de piel personalizado, recomendaciones de productos y guía de aplicación. <br/>También tienes otras 2 opciones:</p><ul><li>Reporte, recomendaciones de productos y kit de muestras (basadas en el resultado de tu test). Tendrás acceso a una clase online para aprender a aplicarlos.</li><li>Reporte, recomendaciones de productos y kit de muestras (basadas en el resultado de tu test). Experiencia de Spa Facial en casa, ¡agendamos contigo y te visitamos! Esta opción únicamente es válida si vives en Madrid.</li></ul><p>Todo esto, ¡sin necesidad de comprar un producto full size! </p>",
+            "large": true
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "Me he equivocado con el pedido, ¿qué puedo hacer?",
+            "answer": "<p>¡No te preocupes!, seguro que podemos solucionarlo, pero es importante que nos escribas pronto a penas detectas el error, para poder gestionarlo. Para ello, te pediremos que nos indiques el número de pedido, lo que ha pasado: si la dirección no es correcta, nos indicas la adecuada; del mismo modo si has añadido algún otro producto por error o te ha faltado algo por agregar, nos indicas cual es. </p>",
+            "large": false
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "Tengo dermatitis atópica o rosácea. ¿Qué productos me aconsejáis?",
+            "answer": "<p>Te recomendamos que antes de seleccionar cualquier producto lo consultes con tu médico o dermatólogo. La rosácea y la dermatitis atópica son afecciones que deben ser controladas por un especialista</p>",
+            "large": true
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "Estoy embarazada. ¿Puedo usar vuestros productos?",
+            "answer": "<p>Si estás embarazada o en período de lactancia, puedes visitar nuestra sección de productos aptos para ti. La encontrarás en este enlace</p>",
+            "large": true
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "¿Qué pasa si no hago una rutina completa de skincare?",
+            "answer": "<p>Te entendemos. Si hace poco has comenzado a cuidar un poco más tu piel puedes empezar con el orden básico: limpiador, tónico, hidratación y protección solar. Con estos pasos ya verás resultados, pero no olvides que la constancia es muy importante. </p>",
+            "large": true
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "¿Tienen tienda física?",
+            "answer": "<p>No, realizamos todo nuestro servicio y venta de productos online.</p>",
+            "large": false
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,194 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "vendor": {
+          "type": "text",
+          "settings": {
+            "text": "{{ product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {}
+        },
+        "share": {
+          "type": "share",
+          "disabled": true,
+          "settings": {
+            "share_label": "Share"
+          }
+        },
+        "icon_with_text_RrWTF4": {
+          "type": "icon-with-text",
+          "settings": {
+            "layout": "horizontal",
+            "icon_1": "heart",
+            "heading_1": "Heading",
+            "icon_2": "return",
+            "heading_2": "Heading",
+            "icon_3": "truck",
+            "heading_3": "Heading"
+          }
+        },
+        "rating_6zRTqz": {
+          "type": "rating",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "vendor",
+        "title",
+        "price",
+        "variant_picker",
+        "quantity_selector",
+        "buy_buttons",
+        "description",
+        "share",
+        "icon_with_text_RrWTF4",
+        "rating_6zRTqz"
+      ],
+      "custom_css": [],
+      "settings": {
+        "enable_sticky_info": true,
+        "color_scheme": "scheme-1",
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "gallery_layout": "thumbnail_slider",
+        "media_position": "left",
+        "image_zoom": "none",
+        "mobile_thumbnails": "hide",
+        "hide_variants": true,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 12
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "disabled": true,
+      "settings": {
+        "heading": "You may also like",
+        "heading_size": "h2",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 28
+      }
+    },
+    "collapsible_content_z3UjHH": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_iYa3hM": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "¿QUÉ VOY A RECIBIR?",
+            "icon": "none",
+            "row_content": "<p>Cada caja incluye <strong>28 dosis de 25 ml </strong>cada vial.<br/><br/>Olistic es un <strong>complemento alimenticio bebible</strong> diseñado para fortalecer, nutrir y combatir la caída del cabello femenino.<br/><br/>Con una fórmula única compuesta por más de <strong>30 ingredientes naturales y veganos,</strong> incluyendo vitaminas y minerales esenciales, así como más de 10 antioxidantes como resveratrol y astaxantina, aminoácidos de colágeno y queratina, cúrcuma, ashwagandha y otros productos naturales que ayudarán a mantener la salud de tu cabello en condiciones óptimas. </p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_CftPM6": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "RESULTADOS",
+            "icon": "none",
+            "row_content": "<p>Dependerá de cada persona, mientras que algunos empiezan a notar los efectos en las primeras semanas, otros necesitarán de algunos meses para ver resultados.<br/>Aún así, la mayoría nota mayor cantidad y volumen de pelo a partir de los 3 meses. Sin embargo, desde el primer mes podrías notar una reducción en la caída de pelo.<br/>A los 6 meses, la mayoría de personas perciben un cambio evidente en su pelo y bienestar global. Pelo más denso, sano y fuerte.<br/></p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_F6D9K6": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "RECOMENDADO PARA",
+            "icon": "none",
+            "row_content": "<p>Olistic está recomendado para todas aquellas personas <strong>mayores de 18 años</strong> que quieran mejorar la salud y belleza de su pelo.<br/><br/>No recomendamos el consumo de Olistic si estás embarazada o en periodo de lactancia. Después de esta etapa vital podemos ayudarte a recuperar la salud y fuerza de tu cabello.<br/><br/>Los complementos alimenticios no deben utilizarse como sustituto de una dieta variada y equilibrada y un estilo de vida saludable.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_J8DB4A": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "INGREDIENTES",
+            "icon": "none",
+            "row_content": "<p>Cada caja incluye <strong>28 dosis de 25 ml </strong>cada vial.<br/><br/>Olistic es un <strong>complemento alimenticio bebible</strong> diseñado para fortalecer, nutrir y combatir la caída del cabello femenino.<br/><br/>Con una fórmula única compuesta por más de <strong>30 ingredientes naturales y veganos,</strong> incluyendo vitaminas y minerales esenciales, así como más de 10 antioxidantes como resveratrol y astaxantina, aminoácidos de colágeno y queratina, cúrcuma, ashwagandha y otros productos naturales que ayudarán a mantener la salud de tu cabello en condiciones óptimas. </p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_iYa3hM",
+        "collapsible_row_CftPM6",
+        "collapsible_row_F6D9K6",
+        "collapsible_row_J8DB4A"
+      ],
+      "custom_css": [
+        "h1 ¨{font-size: 40px;}"
+      ],
+      "settings": {
+        "caption": "",
+        "heading": "",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "layout": "row",
+        "color_scheme": "",
+        "container_color_scheme": "",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "main",
+    "related-products",
+    "collapsible_content_z3UjHH"
+  ]
+}

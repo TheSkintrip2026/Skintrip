@@ -1,0 +1,59 @@
+.experience-heading {
+  position: relative;
+  width: 100%;
+  padding: 60px 40px 80px;
+  text-align: center;
+  background: #fff;
+  overflow: hidden;
+}
+
+.experience-heading__icon {
+  position: absolute;
+  right: 10%;
+  bottom: 20%;
+  width: 4rem;
+}
+
+.experience-heading__title {
+  font-family: 'Magic Romance', serif;
+  font-size: 5.5rem;
+  font-weight: 500;
+  color: #F15926;
+  letter-spacing: 0.02em;
+  line-height: 1.05;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.experience-heading__subtitle {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(13px, 1.5vw, 15px);
+  font-weight: 300;
+  color: #E8450A;
+  line-height: 1.8;
+  letter-spacing: 0.01em;
+}
+
+@media(max-width:900px){
+  .experience-heading__icon{
+    right:5%;
+  }
+}
+
+@media (max-width: 750px) {
+  .experience-heading__icon {
+    right: 50%;
+    transform: translateX(50%);
+    bottom: 0;
+  }
+
+  .experience-heading__title {
+    font-size: 5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .experience-heading__title {
+    font-size: 3rem;
+  }
+}

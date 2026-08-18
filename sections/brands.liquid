@@ -1,0 +1,29 @@
+{{ 'brands.css' | asset_url | stylesheet_tag }}
+
+<div class="brands">
+  <img class="brands__icon" src="{{ 'brands-icon.png' | asset_url }}" alt="icon">
+  <h2 class="brands__title">{{ 'custom.brands.title' | t }}</h2>
+  <div class="brands__grid">
+    <div class="brands__item"><img src="{{ 'brand-cosrx.png' | asset_url }}" alt="COSRX"></div>
+    <div class="brands__item"><img src="{{ 'brand-meisani.png' | asset_url }}" alt="Meisani"></div>
+    <div class="brands__item"><img src="{{ 'brand-ondo.png' | asset_url }}" alt="Ondo"></div>
+    <div class="brands__item"><img src="{{ 'brand-qiyoi.png' | asset_url }}" alt="Qiyoi Skincare"></div>
+    <div class="brands__item"><img src="{{ 'brand-mamaneco.png' | asset_url }}" alt="Mamanecō"></div>
+    <div class="brands__item"><img src="{{ 'brand-brudy.png' | asset_url }}" alt="Brudy Cosmetics"></div>
+    <div class="brands__item"><img src="{{ 'brand-madamqa.png' | asset_url }}" alt="Madamqa"></div>
+    <div class="brands__item"><img src="{{ 'brand-beemine.png' | asset_url }}" alt="The Beemine Lab"></div>
+    <div class="brands__item"><img src="{{ 'brand-madagascar.png' | asset_url }}" alt="Madagascar Centella"></div>
+    <div class="brands__item"><img src="{{ 'brand-skin1004.png' | asset_url }}" alt="Skin 1004"></div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Brands",
+  "presets": [
+    {
+      "name": "Brands"
+    }
+  ]
+}
+{% endschema %}

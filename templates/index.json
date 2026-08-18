@@ -1,0 +1,301 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "pagetify-page": {
+      "type": "pagetify-page",
+      "disabled": true,
+      "settings": {
+        "type": "index",
+        "width": "boxed"
+      }
+    },
+    "hero_WVYqWC": {
+      "type": "hero",
+      "name": "Hero Principal",
+      "settings": {
+        "titulo": "Descubre qué necesita tu piel en 2 minutos.",
+        "subtitulo": "Haz nuestro test, recibe un diagnóstico personalizado, recomendación de productos y una rutina diseñada para ti.",
+        "boton_texto": "Hacer el test",
+        "boton_link": ""
+      }
+    },
+    "custom_steps_CfTM9N": {
+      "type": "custom-steps",
+      "blocks": {
+        "step_ej67d3": {
+          "type": "step",
+          "settings": {
+            "icon": "shopify://shop_images/icono_step_1.png",
+            "text": "",
+            "step_color": "#f15a24"
+          }
+        },
+        "step_7kNdPz": {
+          "type": "step",
+          "settings": {
+            "icon": "shopify://shop_images/icono_step_2.png",
+            "text": "",
+            "step_color": "#f15a24"
+          }
+        },
+        "step_h9pQFY": {
+          "type": "step",
+          "settings": {
+            "icon": "shopify://shop_images/icono_step_3_49c62315-90e2-40da-bc8e-fabb72aed10a.png",
+            "text": "",
+            "step_color": "#f15a24"
+          }
+        }
+      },
+      "block_order": [
+        "step_ej67d3",
+        "step_7kNdPz",
+        "step_h9pQFY"
+      ],
+      "name": "Step section",
+      "settings": {
+        "line_color": "#e3b1d2",
+        "line_thickness": 2,
+        "line_distance": 15,
+        "section_spacing": 80,
+        "step_item_mb_size": 10,
+        "layout_alignment": "center",
+        "show_line_mobile": true,
+        "enable_animation": false,
+        "icon_size": 64,
+        "text_color": "#f15a24",
+        "container_width": "page"
+      }
+    },
+    "experiences_heading_KKJa3P": {
+      "type": "experiences-heading",
+      "name": "Experience Heading",
+      "settings": {
+        "title": "ELIGE TU EXPERIENCIA",
+        "subtitle": "No todas las pieles necesitan lo mismo.\nPor eso creamos diferentes formas de vivir tu rutina."
+      }
+    },
+    "experience_cards_aTbjH8": {
+      "type": "experience-cards",
+      "blocks": {
+        "card_PdrFbQ": {
+          "type": "card",
+          "settings": {
+            "featured": false,
+            "title": "Self Care Guide",
+            "subtitle": "Empieza por entender tu piel.",
+            "feature_1": "Reporte personalizado",
+            "feature_2": "Recomendación de productos",
+            "feature_3": "Guía de aplicación paso a paso",
+            "feature_4": "",
+            "feature_5": "",
+            "feature_6": "",
+            "feature_7": "",
+            "feature_8": "",
+            "feature_9": "",
+            "feature_10": "",
+            "button_text": "Empezar",
+            "button_link": ""
+          }
+        },
+        "card_ybKEC3": {
+          "type": "card",
+          "settings": {
+            "featured": true,
+            "title": "Wellness Box",
+            "subtitle": "Tu rutina llevada a casa.",
+            "feature_1": "Reporte personalizado",
+            "feature_2": "Recomendación de productos",
+            "feature_3": "Guía de aplicación paso a paso",
+            "feature_4": "Kit de muestras personalizado",
+            "feature_5": "Producto sorpresa + 1 regalo",
+            "feature_6": "Sesión grupal online",
+            "feature_7": "Acceso VIP descuentos",
+            "feature_8": "",
+            "feature_9": "",
+            "feature_10": "",
+            "button_text": "Quiero mi box",
+            "button_link": ""
+          }
+        },
+        "card_N4iaFg": {
+          "type": "card",
+          "settings": {
+            "featured": false,
+            "title": "Holistic Glow",
+            "subtitle": "La experiencia completa.",
+            "feature_1": "Reporte personalizado",
+            "feature_2": "Recomendación de productos",
+            "feature_3": "Guía de aplicación paso a paso",
+            "feature_4": "Kit de muestras personalizado",
+            "feature_5": "Producto sorpresa + 1 regalo",
+            "feature_6": "Sesión grupal online",
+            "feature_7": "Acceso VIP descuentos",
+            "feature_8": "Experiencia facial en casa (Madrid)",
+            "feature_9": "Seguimiento 1:1",
+            "feature_10": "Atención personalizada",
+            "button_text": "Vivir la experiencia",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "card_PdrFbQ",
+        "card_ybKEC3",
+        "card_N4iaFg"
+      ],
+      "name": "Experience Cards",
+      "settings": {}
+    },
+    "cta_8GVaaQ": {
+      "type": "cta",
+      "name": "CTA",
+      "settings": {
+        "title": "¡Comencemos!",
+        "button_text": "Hacer el test",
+        "button_link": "/#quiz-gWHrq0"
+      }
+    },
+    "testimonials_V9Ryz7": {
+      "type": "testimonials",
+      "blocks": {
+        "testimonial_Fkkzjw": {
+          "type": "testimonial",
+          "settings": {
+            "text": "No es la típica caja de productos. Aquí aprendes qué usar y por qué. La guía me ayudó a entender mi piel de verdad, y la sesión grupal fue una revelación.",
+            "author": "Lucia Ferrer",
+            "location": "Madrid, España"
+          }
+        },
+        "testimonial_Wpe6AF": {
+          "type": "testimonial",
+          "settings": {
+            "text": "Sentí que por fin alguien entendía mi piel. El test fue rápido, pero el reporte súper completo. Probé las muestras primero y ahora compro con mucha más seguridad.",
+            "author": "Paula Ortega",
+            "location": "Madrid, España"
+          }
+        },
+        "testimonial_D3DXJB": {
+          "type": "testimonial",
+          "settings": {
+            "text": "Me gusta poder elegir con información. Primero hice el test y luego probé las recomendaciones antes de comprar. Nunca había tenido tanta claridad sobre lo que necesita mi piel.",
+            "author": "Irene Castillo",
+            "location": "Madrid, España"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_Fkkzjw",
+        "testimonial_Wpe6AF",
+        "testimonial_D3DXJB"
+      ],
+      "name": "Testimonials",
+      "settings": {
+        "title": "Tu cuidado, nuestra responsabilidad",
+        "subtitle": "Lo que dice nuestra comunidad"
+      }
+    },
+    "brands_EkWzWV": {
+      "type": "brands",
+      "name": "Brands",
+      "settings": {}
+    },
+    "cta_banner_YFMeF7": {
+      "type": "cta-banner",
+      "name": "CTA Banner",
+      "settings": {
+        "title": "Encuentra tu rutina",
+        "subtitle": "Tu rutina hecha con productos a tu medida",
+        "button_text": "Haz el test",
+        "button_link": "/#quiz-gWHrq0"
+      }
+    },
+    "faq_4N9jtq": {
+      "type": "faq",
+      "blocks": {
+        "faq_item_aFajHg": {
+          "type": "faq_item",
+          "settings": {
+            "question": "¡No sé qué producto elegir!",
+            "answer": "<p>¡No te preocupes! Sabemos que hay muchas opciones disponibles pero estamos aquí para ayudarte. Puedes realizar nuestro test y te enviaremos tu reporte de piel personalizado, recomendaciones de productos y guía de aplicación. <br/>También tienes otras 2 opciones:</p><ul><li>Reporte, recomendaciones de productos y kit de muestras (basadas en el resultado de tu test). Tendrás acceso a una clase online para aprender a aplicarlos.</li><li>Reporte, recomendaciones de productos y kit de muestras (basadas en el resultado de tu test). Experiencia de Spa Facial en casa, ¡agendamos contigo y te visitamos! Esta opción únicamente es válida si vives en Madrid.</li></ul><p>Todo esto, ¡sin necesidad de comprar un producto full size! </p>",
+            "large": true
+          }
+        },
+        "faq_item_DFKcfR": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Me he equivocado con el pedido, ¿qué puedo hacer?",
+            "answer": "<p>¡No te preocupes!, seguro que podemos solucionarlo, pero es importante que nos escribas pronto a penas detectas el error, para poder gestionarlo. Para ello, te pediremos que nos indiques el número de pedido, lo que ha pasado: si la dirección no es correcta, nos indicas la adecuada; del mismo modo si has añadido algún otro producto por error o te ha faltado algo por agregar, nos indicas cual es. </p>",
+            "large": false
+          }
+        },
+        "faq_item_yXqEXj": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Tengo dermatitis atópica o rosácea. ¿Qué productos me aconsejáis?",
+            "answer": "<p>Te recomendamos que antes de seleccionar cualquier producto lo consultes con tu médico o dermatólogo. La rosácea y la dermatitis atópica son afecciones que deben ser controladas por un especialista</p>",
+            "large": true
+          }
+        },
+        "faq_item_3YAkUJ": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Estoy embarazada. ¿Puedo usar vuestros productos?",
+            "answer": "<p>Si estás embarazada o en período de lactancia, puedes visitar nuestra sección de productos aptos para ti. La encontrarás en este enlace</p>",
+            "large": true
+          }
+        },
+        "faq_item_iCQ3JA": {
+          "type": "faq_item",
+          "settings": {
+            "question": "¿Qué pasa si no hago una rutina completa de skincare?",
+            "answer": "<p>Te entendemos. Si hace poco has comenzado a cuidar un poco más tu piel puedes empezar con el orden básico: limpiador, tónico, hidratación y protección solar. Con estos pasos ya verás resultados, pero no olvides que la constancia es muy importante. </p>",
+            "large": true
+          }
+        },
+        "faq_item_EbbBqd": {
+          "type": "faq_item",
+          "settings": {
+            "question": "¿Tienen tienda física?",
+            "answer": "<p>No, realizamos todo nuestro servicio y venta de productos online.</p>",
+            "large": false
+          }
+        }
+      },
+      "block_order": [
+        "faq_item_aFajHg",
+        "faq_item_DFKcfR",
+        "faq_item_yXqEXj",
+        "faq_item_3YAkUJ",
+        "faq_item_iCQ3JA",
+        "faq_item_EbbBqd"
+      ],
+      "name": "FAQ",
+      "settings": {
+        "title": "Preguntas Frecuentes",
+        "subtitle": "¿Tienes dudas? Te ayudamos aquí.",
+        "contact_text": "<p>Si tienes cualquier otra consulta, siempre puedes escribirnos por el formulario de contacto en nuestra web, por mail <a href='mailto:hola@theskintrip.com'>hola@theskintrip.com</a> e incluso por <a href='https://www.instagram.com/theskintrip.ue/'>Instagram</a>.</p>"
+      }
+    }
+  },
+  "order": [
+    "pagetify-page",
+    "hero_WVYqWC",
+    "custom_steps_CfTM9N",
+    "experiences_heading_KKJa3P",
+    "experience_cards_aTbjH8",
+    "cta_8GVaaQ",
+    "testimonials_V9Ryz7",
+    "brands_EkWzWV",
+    "cta_banner_YFMeF7",
+    "faq_4N9jtq"
+  ]
+}

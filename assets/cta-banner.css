@@ -1,0 +1,97 @@
+.cta-banner {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  min-height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cta-banner__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+}
+
+.cta-banner__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(210, 160, 200, 0.7);
+  z-index: 1;
+}
+
+.cta-banner__container {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 50px 40px;
+  max-width: 700px;
+  width: 100%;
+}
+
+.cta-banner__icon {
+  position: absolute;
+  left: 2rem;
+  bottom: 8rem;
+  width: 60px;
+  z-index: 3;
+}
+
+.cta-banner__title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 4rem;
+  font-weight: 600;
+  color: #fff;
+  margin: 0 0 8px;
+  line-height: 1.1;
+}
+
+.cta-banner__subtitle {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #fff;
+  margin: 0 0 28px;
+}
+
+.cta-banner__btn {
+  display: inline-block;
+  padding: 0.9rem 3rem;
+  border-radius: 30px;
+  background: #F15A24;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+
+.cta-banner__btn:hover {
+  background: #d44a18;
+  color: #fff;
+}
+
+@media (max-width: 600px) {
+  .cta-banner__container {
+    padding: 40px 20px;
+  }
+
+  .cta-banner__icon {
+    top: 0;
+    width: 3rem;
+  }
+}

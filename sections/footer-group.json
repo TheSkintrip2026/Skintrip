@@ -1,0 +1,95 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "name": "t:sections.footer.name",
+  "type": "footer",
+  "sections": {
+    "1779189088ec7a6b99": {
+      "type": "apps",
+      "blocks": {
+        "face_age_skincare_analyzer_DRhdWh": {
+          "type": "shopify://apps/face-age/blocks/skincare_analyzer/043acb67-6ee1-4433-bc05-31a4f8d134e0",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "face_age_skincare_analyzer_DRhdWh"
+      ],
+      "disabled": true,
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "custom_footer_AWV9DJ": {
+      "type": "custom-footer",
+      "custom_css": [
+        ".footer-col-title {font-size: 1.5rem; font-family: \"Poppins\", sans-serif;}",
+        "li > a {font-size: 1.2rem; font-weight: 100; letter-spacing: 0rem;}",
+        ".footer-deco-icon {width: auto; height: 5rem;}",
+        ".fa-brands {font-size: 4rem;}",
+        ".footer-top {min-height: 30rem; padding-bottom: 0;}",
+        ".footer-logo {font-size: 5rem; margin: 0;}",
+        ".footer-top {padding-top: 4rem;}",
+        ".footer-brand {display: flex; flex-direction: column; justify-content: space-between;}",
+        ".footer-bottom {margin-top: 2rem;}"
+      ],
+      "name": "Footer personalizado",
+      "settings": {
+        "brand_name": "Skintrip",
+        "brand_tagline": "Tu rutina de belleza a tu medida",
+        "background_image": "shopify://shop_images/Component_20_2.png",
+        "deco_icon": "shopify://shop_images/Component_21.png",
+        "instagram_url": "https://www.instagram.com/theskintrip.ue",
+        "linkedin_url": "https://www.linkedin.com/company/theskintrip/",
+        "col1_title": "Servicio al cliente",
+        "col1_menu": "servicio-al-cliente",
+        "col2_title": "Información",
+        "col2_menu": "informaci-n"
+      }
+    },
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "image_DFfgPG": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Logo_naranja.png",
+            "image_width": 240,
+            "alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "image_DFfgPG"
+      ],
+      "disabled": true,
+      "custom_css": [],
+      "settings": {
+        "color_scheme": "scheme-0971808b-5760-4944-b435-11c90beebde4",
+        "newsletter_enable": false,
+        "newsletter_heading": "",
+        "enable_follow_on_shop": false,
+        "show_social": true,
+        "enable_country_selector": false,
+        "enable_language_selector": false,
+        "payment_enable": true,
+        "show_policy": true,
+        "margin_top": 0,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "1779189088ec7a6b99",
+    "custom_footer_AWV9DJ",
+    "footer"
+  ]
+}

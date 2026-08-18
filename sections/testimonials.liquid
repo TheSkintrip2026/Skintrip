@@ -1,0 +1,189 @@
+{{ 'testimonials.css' | asset_url | stylesheet_tag }}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<div class="testimonials">
+  {%- if section.settings.bg_image != blank -%}
+    {{ section.settings.bg_image | image_url: width: 1200 | image_tag:
+      class: 'testimonials__bg',
+      alt: 'background',
+      loading: 'lazy'
+    }}
+  {%- else -%}
+    <img src="{{ 'testimonials-bg.png' | asset_url }}" class="testimonials__bg" alt="background" loading="lazy">
+  {%- endif -%}
+
+  <div class="testimonials__overlay"> </div>
+
+  <div class="testimonials__inner">
+    <div class="testimonials__header">
+      <h2 class="testimonials__title">{{ section.settings.title }}</h2>
+      <p class="testimonials__subtitle">{{ section.settings.subtitle }}</p>
+    </div>
+
+    <div class="testimonials__carousel">
+      <button class="carousel__btn" id="btnPrev">
+        <i class="fa-solid fa-angle-left"></i>
+      </button>
+
+      <div class="carousel__viewport" id="carouselViewport">
+        {%- for block in section.blocks -%}
+          <div class="testimonial-card" data-index="{{ forloop.index0 }}" {{ block.shopify_attributes }}>
+            {%- if block.settings.avatar != blank -%}
+              {{ block.settings.avatar | image_url: width: 160 | image_tag:
+                class: 'testimonial-card__avatar',
+                alt: block.settings.author,
+                loading: 'lazy'
+              }}
+            {%- else -%}
+              <img
+                src="{{ 'testimonial-' | append: forloop.index | append: '.png' | asset_url }}"
+                class="testimonial-card__avatar"
+                alt="{{ block.settings.author }}"
+                loading="lazy">
+            {%- endif -%}
+            <p class="testimonial-card__text">{{ block.settings.text }}</p>
+            <p class="testimonial-card__author">— {{ block.settings.author }}</p>
+            <p class="testimonial-card__location">{{ block.settings.location }}</p>
+          </div>
+        {%- endfor -%}
+      </div>
+
+      <button class="carousel__btn" id="btnNext">
+        <i class="fa-solid fa-angle-right"></i>
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  const cards = Array.from(document.querySelectorAll('#carouselViewport .testimonial-card'));
+  const total = cards.length;
+  let active = 1;
+  let animating = false;
+
+  function getPos(i) {
+    const offset = ((i - active) + total) % total;
+    const norm = offset > total / 2 ? offset - total : offset;
+    if (norm === 0)  return 'center';
+    if (norm === -1) return 'left';
+    if (norm === 1)  return 'right';
+    return norm < 0 ? 'hidden-left' : 'hidden-right';
+  }
+
+  function applyPositions() {
+    cards.forEach(function (card, i) {
+      card.classList.remove('left', 'center', 'right', 'hidden-left', 'hidden-right');
+      card.classList.add(getPos(i));
+    });
+  }
+
+  function move(dir) {
+    if (animating) return;
+    animating = true;
+    active = (active + dir + total) % total;
+    applyPositions();
+    setTimeout(function () { animating = false; }, 600);
+  }
+
+  cards.forEach(function (card, i) {
+    card.addEventListener('click', function () {
+      const pos = getPos(i);
+      if (pos === 'left')  move(-1);
+      if (pos === 'right') move(1);
+    });
+  });
+
+  document.getElementById('btnPrev').addEventListener('click', function () { move(-1); });
+  document.getElementById('btnNext').addEventListener('click', function () { move(1); });
+
+  applyPositions();
+})();
+</script>
+
+{% schema %}
+{
+  "name": "Testimonials",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Tu cuidado, nuestra responsabilidad"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Lo que dice nuestra comunidad"
+    },
+    {
+      "type": "image_picker",
+      "id": "bg_image",
+      "label": "Background image"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Testimonial",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "avatar",
+          "label": "Avatar"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Text",
+          "default": "No es la típica caja de productos. Aquí aprendes qué usar y por qué."
+        },
+        {
+          "type": "text",
+          "id": "author",
+          "label": "Author",
+          "default": "Lucia Ferrer"
+        },
+        {
+          "type": "text",
+          "id": "location",
+          "label": "Location",
+          "default": "Madrid, España"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Testimonials",
+      "blocks": [
+        {
+          "type": "testimonial",
+          "settings": {
+            "text": "No es la típica caja de productos. Aquí aprendes qué usar y por qué. La guía me ayudó a entender mi piel de verdad, y la sesión grupal fue una revelación.",
+            "author": "Lucia Ferrer",
+            "location": "Madrid, España"
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "text": "Sentí que por fin alguien entendía mi piel. El test fue rápido, pero el reporte súper completo. Probé las muestras primero y ahora compro con mucha más seguridad.",
+            "author": "Paula Ortega",
+            "location": "Madrid, España"
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "text": "Me gusta poder elegir con información. Primero hice el test y luego probé las recomendaciones antes de comprar. Nunca había tenido tanta claridad sobre lo que necesita mi piel.",
+            "author": "Irene Castillo",
+            "location": "Madrid, España"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

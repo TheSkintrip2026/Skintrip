@@ -1,0 +1,367 @@
+/* =============================================
+   SKINTRIP HEADER — Dawn compatible
+   ============================================= */
+
+:root {
+  --st-coral:        #E8522A;
+  --st-coral-hover:  rgba(232, 82, 42, 0.07);
+  --st-coral-border: rgba(232, 82, 42, 0.15);
+  --st-separator:    rgba(232, 82, 42, 0.35);
+  --st-dropdown-bg:  #f5dce8;
+}
+
+/* ─── Fondo del header ─── */
+.header-wrapper {
+  background-color: #ffffff !important;
+  background: #ffffff !important;
+}
+
+.header-wrapper--border-bottom {
+  border-bottom: 1px solid var(--st-coral-border) !important;
+}
+
+.shopify-section-header-sticky .header-wrapper {
+  background-color: #ffffff !important;
+}
+.section-header{
+  z-index:10!important;
+}
+
+.header {
+  padding: 2rem 3rem !important;
+  position:relative!important;
+  z-index:5!important;
+}
+
+.AirReviews-Widget--Stars {
+  display: none !important;
+}
+
+/* ─── Logo ─── */
+.header__heading-logo-wrapper {
+  display: flex !important;
+  align-items: center !important;
+}
+
+.header__heading-logo {
+  display: block !important;
+}
+
+.logo-img{
+  height:3rem!important;
+  margin-bottom:1rem!important;
+  margin-right:0.8rem!important;
+}
+
+.skintrip-logo-text{
+  margin-top:1rem!important;
+}
+
+
+/*Busqueda*/
+
+.modal-overlay {
+  display: none !important;
+}
+
+
+/* ─── Links del nav ─── */
+.header__menu-item {
+  color: var(--st-coral) !important;
+  font-size: 1.35rem !important;
+  font-weight: 400 !important;
+  opacity: 1 !important;
+}
+
+.header__menu-item:hover,
+.header__menu-item:hover span {
+  color: var(--st-coral) !important;
+  opacity: 0.72 !important;
+  text-decoration: none !important;
+}
+
+.header__active-menu-item {
+  color: var(--st-coral) !important;
+  text-decoration: none !important;
+}
+
+/* ─── Separador | entre items del nav ─── */
+.header__inline-menu .list-menu--inline > li:not(:first-child) > a.header__menu-item {
+  border-left: 1px solid var(--st-separator);
+  padding-left: 1.4rem !important;
+  margin-left: 0.2rem;
+}
+
+/* ─── Pill "Productos" ─── */
+.header__inline-menu details > summary.list-menu__item,
+.header__inline-menu details > summary.header__menu-item {
+  border: 1.5px solid var(--st-coral) !important;
+  border-radius: 3rem !important;
+  padding: 1.5rem 2rem !important;
+  color: var(--st-coral) !important;
+  line-height: 1 !important;
+  background: transparent !important;
+  transition: background 0.15s ease !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+.header__inline-menu details > summary.list-menu__item:hover,
+.header__inline-menu details > summary.header__menu-item:hover {
+  background: var(--st-coral-hover) !important;
+  opacity: 1 !important;
+  text-decoration: none !important;
+}
+
+.header__inline-menu .list-menu--inline > li:not(:first-child) > details > summary.header__menu-item {
+  border-left: 1.5px solid var(--st-coral) !important;
+}
+
+.header__inline-menu details > summary .icon-caret {
+  color: var(--st-coral) !important;
+}
+
+/* ─── Dropdown submenú ─── */
+.header__submenu.global-settings-popup {
+  background-color: var(--st-dropdown-bg) !important;
+  border: none !important;
+  border-radius: 12px !important;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08) !important;
+  min-width: 200px !important;
+  padding: 0.8rem 0 !important;
+}
+
+.header__submenu .header__menu-item {
+  color: var(--st-coral) !important;
+  font-size: 1.3rem !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.05em !important;
+  text-transform: uppercase !important;
+  justify-content: space-between !important;
+  padding: 1rem 1.5rem !important;
+}
+
+.header__submenu .header__menu-item:hover {
+  background: rgba(255,255,255,0.4) !important;
+  opacity: 1 !important;
+}
+
+.header__submenu .icon-caret {
+  color: var(--st-coral) !important;
+  position: static !important;
+  margin-left: auto !important;
+}
+
+/* ─── Íconos ─── */
+.header__icon {
+  color: var(--st-coral) !important;
+}
+
+.header__icon:hover {
+  opacity: 0.72 !important;
+}
+
+.header__icon .icon {
+  color: var(--st-coral) !important;
+}
+
+/* ─── Badge carrito ─── */
+.cart-count-bubble {
+  background-color: var(--st-coral) !important;
+  color: #ffffff !important;
+}
+
+/* ─── Avatar cuenta ─── */
+.header__icon--account {
+  background: #e8c4d8 !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin-left: 0.4rem !important;
+}
+
+.header__icon--account .icon {
+  color: #ffffff !important;
+}
+
+/* ─── Wrapper nav + search ─── */
+.header__inline-menu--with-search {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0 !important;
+}
+
+/* ─── DESKTOP (990px+) ─── */
+@media screen and (min-width: 990px) {
+  .header--middle-left {
+    grid-template-areas: 'heading navigation icons' !important;
+    grid-template-columns: auto 1fr auto !important;
+    column-gap: 2rem !important;
+  }
+
+  .header--middle-left .header__heading-link {
+    justify-self: start !important;
+    margin-left: 0 !important;
+  }
+
+  .header--middle-left .header__inline-menu {
+    justify-self: end !important;
+    margin-left: 0 !important;
+  }
+
+  .header--middle-left .header__inline-menu .list-menu--inline {
+    justify-content: flex-end !important;
+  }
+
+  .header__inline-menu--with-search {
+    grid-area: navigation !important;
+    justify-self: end !important;
+    align-items: center !important;
+  }
+
+  .header__inline-menu--with-search .header__inline-menu {
+    align-items: center !important;
+  }
+
+  .header__inline-menu .list-menu--inline {
+    align-items: center !important;
+  }
+
+  .header__inline-menu .list-menu__item {
+    align-items: center !important;
+  }
+
+  .header__icons {
+    align-items: center !important;
+  }
+
+  .header__inline-menu--with-search .header__search {
+    display: inline-flex !important;
+    margin-right: 0.5rem !important;
+  }
+
+  .header__icons .header__search {
+    display: none !important;
+  }
+
+  .header__icon--account {
+    width: 3.2rem !important;
+    height: 3.2rem !important;
+  }
+
+  .header__icon--account .icon {
+    width: 1.6rem !important;
+    height: 1.6rem !important;
+  }
+}
+
+/* ─── MÓVIL/TABLET (hasta 989px) ─── */
+@media screen and (max-width: 989px) {
+  .header__inline-menu--with-search .header__search {
+    display: none !important;
+  }
+
+  .header__icons {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0 !important;
+  }
+
+  .small-hide-search {
+    display: inline-flex !important;
+    align-items: center !important;
+  }
+
+  .small-hide-search .header__icon,
+  .header__icon--cart {
+    width: 4.4rem !important;
+    height: 4.4rem !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .header__icon--account {
+    width: 3rem !important;
+    height: 3rem !important;
+    margin: 0 0.2rem 0 0 !important;
+    padding: 0 !important;
+    flex-shrink: 0 !important;
+  }
+
+  .header__icon--account .icon {
+    width: 1.5rem !important;
+    height: 1.5rem !important;
+  }
+}
+
+/* Personalizacion Drawer(Hamburguesa)*/
+
+.menu-drawer {
+  background-color: #ffffffff !important;
+}
+/*Items en general*/
+
+.menu-drawer__menu-item {
+  color: #f15a24 !important;
+}
+
+/* Item account(Iniciar sesion) */
+
+.menu-drawer__account {
+  color: #ffffffff !important;
+}
+
+.menu-drawer__account .icon {
+  color: #ffffffff !important;
+}
+
+.menu-drawer__utility-links{
+  background:#e3b1d2!important;
+}
+
+/* ─── Quitar estilo pill de los items dentro del dropdown ─── */
+.header__submenu details > summary.list-menu__item,
+.header__submenu details > summary.header__menu-item,
+.header__submenu .list-menu__item--link {
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 1rem 1.5rem !important;
+  background: transparent !important;
+}
+
+.header__submenu .list-menu--inline > li:not(:first-child) > a.header__menu-item {
+  border-left: none !important;
+  padding-left: 1.5rem !important;
+  margin-left: 0 !important;
+}
+
+/* ─── Dropdown alineado a la derecha ─── */
+.header__inline-menu details > .header__submenu {
+  right: 0 !important;
+  left: auto !important;
+}
+
+@media screen and (min-width: 990px) {
+  .header__icon--cart {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+}
+
+@media screen and (max-width: 749px) {
+  .header__icon--account {
+    display: none !important;
+  }
+
+  .small-hide-search {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .header--middle-left {
+    grid-template-columns: auto 1fr auto !important;
+  }
+}

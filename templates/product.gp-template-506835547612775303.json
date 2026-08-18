@@ -1,0 +1,46 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "gp_section_506835748872258439": {
+      "settings": {
+        "checksum": "79e9f4e45b53c967306febbd26c060f28eb2521b4aad99141f88731d81ccdd81_1_1_0_0__1",
+        "gg8wkjtOD62_srcSet_desktop_src": "https://ucarecdn.com/ee6d5074-1640-4cc7-8933-47c8589c3dee/-/format/auto/",
+        "ggA7qnRQEZR_srcSet_desktop_src": "https://ucarecdn.com/ee6d5074-1640-4cc7-8933-47c8589c3dee/-/format/auto/",
+        "ggB0oo57pty_text": "<p>+11.000 opiniones</p>",
+        "ggKoP2ZKd8m_srcSet_desktop_src": "https://ucarecdn.com/ee6d5074-1640-4cc7-8933-47c8589c3dee/-/format/auto/",
+        "ggLTYQmelOU_srcSet_desktop_src": "https://ucarecdn.com/ee6d5074-1640-4cc7-8933-47c8589c3dee/-/format/auto/",
+        "ggb6TeTPXw3_text": "<p><span style=\"font-size:14px;\">Cada caja incluye&nbsp;<strong>28 dosis&nbsp;</strong>de 25 ml cada vial.</span></p><p>&nbsp;</p><p><span style=\"font-size:14px;\">Olistic es un <strong>complemento alimenticio bebible</strong> diseñado para <strong>fortalecer, nutrir y combatir la caída del cabello femenino.</strong></span></p><p>&nbsp;</p><p><span style=\"font-size:14px;\">El “shot” diario que combina <strong>más de 30 ingredientes naturales </strong>en una sola dosis y te ayuda a mejorar la salud capilar y el bienestar general.</span></p>",
+        "gglcKdhIC23_text": "<p><span style=\"background-color:rgb(255,255,255);color:rgba(6,6,6,0.3);font-size:14px;\">Puedes pausar o cancelar en cualquier momento. Dispones de 30 días de garantía.</span></p>",
+        "ggs0aQ_1ga1_srcSet_desktop_src": "https://ucarecdn.com/ee6d5074-1640-4cc7-8933-47c8589c3dee/-/format/auto/",
+        "ggyLJWh9bXo_viewLessText": "View less",
+        "ggyLJWh9bXo_viewMoreText": "View more",
+        "section_preload": "true"
+      },
+      "type": "gp-section-506835748872258439"
+    },
+    "gp_section_506836773322622058": {
+      "settings": {
+        "checksum": "204beeefd9ca66238efde7cf75309cd92164fa5bfe61c0a61a10a92ffb5f9901_1_1_0_0__1",
+        "ggCo3HmS7wy_text": "<p>En cada caja de Skintrip recibirás 4 muestras de productos y 4 productos en talla grande. Todos personalizados de acuerdo a tu tipo de piel, necesidades y objetivos.&nbsp;<br>Podrás probar primero las <strong>muestras</strong> y quedarte con los productos en talla grande que te gustaron y que necesites. Devuelve el resto gratis en la bolsa de devoluciones que viene dentro de la caja.&nbsp;</p>",
+        "ggF2LyaHODp_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "ggZAk6ZlH9F_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "ggiPlgIqw7G_childItem_0": "<p>¿QUÉ VOY A RECIBIR?</p>",
+        "ggiPlgIqw7G_childItem_1": "<p>RESULTADOS</p>",
+        "ggiPlgIqw7G_childItem_2": "<p>RECOMENDADO PARA</p>"
+      },
+      "type": "gp-section-506836773322622058"
+    }
+  },
+  "order": [
+    "gp_section_506835748872258439",
+    "gp_section_506836773322622058"
+  ]
+}
