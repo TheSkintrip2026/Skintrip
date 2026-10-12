@@ -444,24 +444,6 @@ function prqQuizCallback(quizResponse) {
               overlay.appendChild(modal);
               analyzerBox.appendChild(overlay);
             }
-
-            // Enviar datos a Vercel
-            fetch('https://skintrip-webhook.vercel.app/api/faceage-callback', {
-              method: 'POST',
-              headers: {
-                'Content-Type': 'application/json',
-                'X-Auth-Token': 'skintrip-2026'
-              },
-              body: JSON.stringify({
-                email: email,
-                name: name,
-                photo_url: '',
-                results: data.data || {},
-                recommended_products: data.data?.products || [],
-                quiz_answers: activeSelections
-              })
-            });
-
           });
         }
 
